@@ -1,5 +1,10 @@
+body {
+  margin: 0 auto;
+  background-color: rgb(250, 250, 250);
+  color: #11263F;
+}
+
 .poly-background {
-  /*background: linear-gradient(90deg, red, blue);*/
   background-image: linear-gradient(135deg, #667eea 0%, #764ba2 60%);
   width: 100%;
   height: 205%;

@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'Cerebri Regular';
+  src: url('../fonts/cerebrisans/cerebrisans-regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'Cerebri Book';
+  src: url('../fonts/cerebrisans/cerebrisans-book.woff') format('woff');
+}
+@font-face {
+  font-family: 'Cerebri Medium';
+  src: url('../fonts/cerebrisans/cerebrisans-medium.woff') format('woff');
+}
+@font-face {
+  font-family: 'Cerebri Semibold';
+  src: url('../fonts/cerebrisans/cerebrisans-semibold.woff') format('woff');
+}
+@font-face {
+  font-family: 'Cerebri Bold';
+  src: url('../fonts/cerebrisans/cerebrisans-bold.woff') format('woff');
+}
