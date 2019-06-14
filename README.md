@@ -3,3 +3,4 @@
 - You can browse my solutions [here](https://dcts.github.io/javascript30-codingChallenges/)
 - Done to improve and practice my javascript skills! Done from **14.06.2019 - 13.07.2019**
 
+![Bildschirmfoto von 2019-06-14 14-38-36](https://user-images.githubusercontent.com/44790691/59509724-1fc77900-8eb2-11e9-89d0-f8e729b345fc.png)
