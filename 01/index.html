@@ -6,16 +6,90 @@
   <title>Web DrumKit</title>
 
   <!-- LINK STYLESHEETS -->
-  <link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" href="/style.css"> -->
   <link rel="stylesheet" href="../assets/css/fonts.css">
 </head>
 
 <body>
-  <h1>Cerebrisans Bold</h1>
-  <div class="container-main">
-
+  <div class="container">
+    <h1 class="center ">WebDrumkit</h1>
+    <div class="grid-container">
+      <div data-keyValue="q" data-keyCode="81" class="grid-item">Q</div>
+      <div data-keyValue="w" data-keyCode="87" class="grid-item">W</div>
+      <div data-keyValue="e" data-keyCode="69" class="grid-item">E</div>
+      <div data-keyValue="r" data-keyCode="82" class="grid-item">R</div>
+      <div data-keyValue="a" data-keyCode="65" class="grid-item">A</div>
+      <div data-keyValue="s" data-keyCode="83" class="grid-item">S</div>
+      <div data-keyValue="d" data-keyCode="68" class="grid-item">D</div>
+      <div data-keyValue="f" data-keyCode="70" class="grid-item">F</div>
+      <div data-keyValue="y" data-keyCode="89" class="grid-item">Y</div>
+      <div data-keyValue="x" data-keyCode="88" class="grid-item">X</div>
+      <div data-keyValue="c" data-keyCode="67" class="grid-item">C</div>
+      <div data-keyValue="v" data-keyCode="86" class="grid-item">V</div>
+    </div>
   </div>
 
+  <audio data-keyCode="81" src="samples/hihat.wav"></audio>
+  <audio data-keyCode="87" src="samples/hihat.wav"></audio>
+  <audio data-keyCode="69" src="samples/openhat.wav"></audio>
+  <audio data-keyCode="82" src="samples/hihat.wav"></audio>
+  <audio data-keyCode="65" src="samples/ride.wav"></audio>
+  <audio data-keyCode="83" src="samples/clap.wav"></audio>
+  <audio data-keyCode="68" src="samples/tink.wav"></audio>
+  <audio data-keyCode="70" src="samples/boom.wav"></audio>
+  <audio data-keyCode="89" src="samples/kick.wav"></audio>
+  <audio data-keyCode="88" src="samples/snare.wav"></audio>
+  <audio data-keyCode="67" src="samples/boom.wav"></audio>
+  <audio data-keyCode="86" src="samples/boom.wav"></audio>
 </body>
 </html>
 
+
+<script>
+  document.body.addEventListener("keydown", (event) => {
+    console.log(event.key);
+    console.log(event.keyCode);
+    const a = document.querySelector(`audio[data-keyCode="${event.keyCode}"]`);
+    console.log(a);
+    a.play();
+  });
+</script>
+
+<style>
+  body {
+    font-family: 'Cerebri Regular';
+  }
+  h1 {
+    display: block;
+    text-align: center;
+  }
+  .container {
+    /*border: 3px solid red;*/
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    /*background-color: rgb(15,15,15);*/
+    padding: 10px;
+    z-index: 5;
+    margin: 0 auto;
+    max-width: 900px;
+    height: 600px;
+  }
+  .grid-item {
+    /*background-color: rgba(0,0,0,0.8);*/
+    /*background-color: #FFD303;*/
+    /*color: #11263F;*/
+    /*border: 1px solid rgba(0, 0, 0, 0.8);*/
+    background-color: rgb(240,240,240);
+    color: rgb(15,15,15);
+    padding: 20px;
+    margin: 5px;
+    border-radius: 3px;
+    font-size: 30px;
+    text-align: center;
+    z-index: 4;
+  }
+</style>
