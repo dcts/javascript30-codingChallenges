@@ -51,6 +51,7 @@
     console.log(event.keyCode);
     const a = document.querySelector(`audio[data-keyCode="${event.keyCode}"]`);
     console.log(a);
+    a.currentTime = 0;
     a.play();
   });
 </script>
