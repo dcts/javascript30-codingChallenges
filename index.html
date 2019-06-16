@@ -72,7 +72,7 @@
   const rootUrl = document.location.href;
   document.querySelectorAll('.grid-item').forEach((gridItem) => {
     gridItem.addEventListener("click", (e) => {
-      window.location = `${rootUrl}${e.currentTarget.dataset.url}`
+      window.location = `${rootUrl}days/${e.currentTarget.dataset.url}`
     });
   });
 </script>
