@@ -1,0 +1,60 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+  padding: 10px;
+  z-index: 5;
+  margin: 0 auto;
+  max-width: 900px;
+  height: 600px;
+}
+.grid-item {
+  background-color: rgb(240,240,240);
+  color: rgb(15,15,15);
+  font-size: 30px;
+  text-align: center;
+  padding: 20px;
+  margin: 5px;
+  border-radius: 6px;
+  cursor: pointer; /* CHANGE MOUSE APPEARANCE ON HOVER */
+  z-index: 4;
+}
+.grid-item:hover {
+  font-size: 30px;
+  text-align: center;
+  padding: 20px;
+  margin: 5px;
+  box-shadow: 0 0 5px grey;
+  border-radius: 6px;
+  z-index: 4;
+}
+.done {
+  color: #764ba2 !important;
+  font-weight: bold;
+  box-shadow: 0 0 5px #764ba2;
+}
+.done:hover {
+  color: #764ba2 !important;
+  font-weight: bold;
+  box-shadow: 0 0 10px #764ba2;
+}
+
+/* ALTERNATIVE COLORING (yellow / purple) */
+/*
+.yellow-bg {
+  background: #FFD303;
+  color: #11263F;
+}
+.grey-bg {
+  background: #11263F;
+  color: #FFD303;
+}
+.yellow-bg {
+  background: #FFD303;
+  color: #11263F;
+}
+.grey-bg {
+  background: #11263F;
+  color: #FFD303;
+}
+*/
+

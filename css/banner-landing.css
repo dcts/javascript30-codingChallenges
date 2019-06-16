@@ -1,13 +1,10 @@
 .full-screen-banner {
-  /*border: 2px solid red;*/
   height: 580px;
   font-weight: 700;
   position: relative;
   z-index: 3;
 }
-
 .flex-container {
-  /*border: 2px solid green;*/
   padding-top: 100px;
   display: flex;
   justify-content: center;
@@ -47,7 +44,7 @@
   width: 700px;
   z-index: 2;
 }
-/* LAPTOP IMAGE */
+/* ACTUALL IMAGE (of the laptop) */
 .banner-img img {
   width: 650px;
   margin-left: 40px;
