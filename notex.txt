@@ -1,0 +1,4 @@
+- basics importieren überall
+- check imports manually
+
+- add hover effect on drum
