@@ -4,3 +4,10 @@ body {
   color: #11263F;
   font-family: 'Cerebri Regular';
 }
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.center {
+  text-align: center;
+}

@@ -3,26 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="description" content="Javascript30 challenge 1 - Web DrumKit">
-  <title>Web DrumKit</title>
+  <title>CSS Clock</title>
 
   <!-- LINK STYLESHEETS -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="../../assets-shared/css/fonts.css">
   <link rel="stylesheet" href="../../assets-shared/css/basics.css">
 </head>
 
 <body>
   <div class="container">
-    <h1 class="center" style="display: block;">WebDrumkit</h1>
+    <h1 class="center ">WebDrumkit</h1>
     <div class="grid-container">
       <div data-keyValue="q" data-keyCode="81" class="grid-item yellow-bg">Q</div>
       <div data-keyValue="w" data-keyCode="87" class="grid-item grey-bg">W</div>
       <div data-keyValue="e" data-keyCode="69" class="grid-item yellow-bg">E</div>
       <div data-keyValue="r" data-keyCode="82" class="grid-item grey-bg">R</div>
-      <div data-keyValue="a" data-keyCode="65" class="grid-item grey-bg">A</div>
-      <div data-keyValue="s" data-keyCode="83" class="grid-item yellow-bg">S</div>
-      <div data-keyValue="d" data-keyCode="68" class="grid-item grey-bg">D</div>
-      <div data-keyValue="f" data-keyCode="70" class="grid-item yellow-bg">F</div>
+      <div data-keyValue="a" data-keyCode="65" class="grid-item yellow-bg">A</div>
+      <div data-keyValue="s" data-keyCode="83" class="grid-item grey-bg">S</div>
+      <div data-keyValue="d" data-keyCode="68" class="grid-item yellow-bg">D</div>
+      <div data-keyValue="f" data-keyCode="70" class="grid-item grey-bg">F</div>
       <div data-keyValue="y" data-keyCode="89" class="grid-item yellow-bg">Y</div>
       <div data-keyValue="x" data-keyCode="88" class="grid-item grey-bg">X</div>
       <div data-keyValue="c" data-keyCode="67" class="grid-item yellow-bg">C</div>
@@ -42,19 +42,6 @@
   <audio data-keyCode="88" src="samples/snare.wav"></audio>
   <audio data-keyCode="67" src="samples/boom.wav"></audio>
   <audio data-keyCode="86" src="samples/boom.wav"></audio>
-
-  <a href="/" class="bttn-back-to-main">BACK TO MAIN<a>
 </body>
 </html>
 
-
-<script>
-  document.body.addEventListener("keydown", (event) => {
-    console.log(event.key);
-    console.log(event.keyCode);
-    const a = document.querySelector(`audio[data-keyCode="${event.keyCode}"]`);
-    console.log(a);
-    a.currentTime = 0;
-    a.play();
-  });
-</script>
