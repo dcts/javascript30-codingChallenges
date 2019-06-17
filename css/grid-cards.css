@@ -10,16 +10,18 @@
 .grid-item {
   background-color: rgb(240,240,240);
   color: rgb(15,15,15);
-  font-size: 30px;
+  font-size: 22px;
   text-align: center;
   padding: 20px;
   margin: 5px;
   border-radius: 6px;
   cursor: pointer; /* CHANGE MOUSE APPEARANCE ON HOVER */
   z-index: 4;
+  width: 80px;
+  height: 80px;
 }
 .grid-item:hover {
-  font-size: 30px;
+  font-size: 22px;
   text-align: center;
   padding: 20px;
   margin: 5px;
@@ -37,24 +39,3 @@
   font-weight: bold;
   box-shadow: 0 0 10px #764ba2;
 }
-
-/* ALTERNATIVE COLORING (yellow / purple) */
-/*
-.yellow-bg {
-  background: #FFD303;
-  color: #11263F;
-}
-.grey-bg {
-  background: #11263F;
-  color: #FFD303;
-}
-.yellow-bg {
-  background: #FFD303;
-  color: #11263F;
-}
-.grey-bg {
-  background: #11263F;
-  color: #FFD303;
-}
-*/
-
