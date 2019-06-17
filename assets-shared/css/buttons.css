@@ -1,15 +1,18 @@
 .bttn {
-
+  background-color: slateblue;
+  color: white;
+  font-weight: bold;
+  padding: 13px 28px;
+  text-decoration: none;
+  box-shadow: 0 0 7px grey;
 }
 .bttn:hover {
-
+  background-color: #ada3e7;
+  /*color: black;*/
 }
 .bttn-round {
-
+  border-radius: 30px;
 }
-.bttn-sm {
-
-}
-.bttn-lg {
-
+.bttn-square {
+  border-radius: 3px;
 }
