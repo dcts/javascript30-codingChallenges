@@ -9,11 +9,12 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="../../assets-shared/css/fonts.css">
   <link rel="stylesheet" href="../../assets-shared/css/basics.css">
+  <link rel="stylesheet" href="../../assets-shared/css/buttons.css">
 </head>
 
 <body>
   <div class="container">
-    <h1 class="center" style="display: block;">WebDrumkit</h1>
+    <h1 class="center">WebDrumkit</h1>
     <div class="grid-container">
       <div data-keyValue="q" data-keyCode="81" class="grid-item yellow-bg">Q</div>
       <div data-keyValue="w" data-keyCode="87" class="grid-item grey-bg">W</div>
@@ -27,6 +28,9 @@
       <div data-keyValue="x" data-keyCode="88" class="grid-item grey-bg">X</div>
       <div data-keyValue="c" data-keyCode="67" class="grid-item yellow-bg">C</div>
       <div data-keyValue="v" data-keyCode="86" class="grid-item grey-bg">V</div>
+    </div>
+    <div class="flex justify-center">
+      <a id="bttn-back" class="center block bttn bttn-round">BACK<a>
     </div>
   </div>
 
@@ -43,18 +47,29 @@
   <audio data-keyCode="67" src="samples/boom.wav"></audio>
   <audio data-keyCode="86" src="samples/boom.wav"></audio>
 
-  <a href="/" class="bttn-back-to-main">BACK TO MAIN<a>
+  <!-- LOAD JAVASCRIPS AFTER PAGELOAD -->
 </body>
 </html>
 
 
 <script>
   document.body.addEventListener("keydown", (event) => {
-    console.log(event.key);
-    console.log(event.keyCode);
-    const a = document.querySelector(`audio[data-keyCode="${event.keyCode}"]`);
-    console.log(a);
-    a.currentTime = 0;
-    a.play();
+    const audio = document.querySelector(`audio[data-keyCode="${event.keyCode}"]`);
+    console.log(audio);
+    audio.currentTime = 0;
+    audio.play();
   });
+
+  const bttnBack = document.getElementById("bttn-back");
+  bttnBack.onclick = (e) => {
+    console.log("CLICKED!");
+    // SPECIAL CASE FOR HOSTING ON GITHUB PAGES!
+    if (window.origin.includes("github")) {
+      window.location = window.origin + "/javascript30-codingChalleges/";
+    // WHEN RUNNING LOCALLY!
+    } else {
+      window.location = window.origin;
+      console.log("else");
+    }
+  };
 </script>
