@@ -5,6 +5,7 @@
   padding: 13px 28px;
   text-decoration: none;
   box-shadow: 0 0 7px grey;
+  cursor: pointer;
 }
 .bttn:hover {
   background-color: #ada3e7;

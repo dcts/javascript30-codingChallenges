@@ -6,7 +6,6 @@
   <title>Web DrumKit</title>
 
   <!-- LINK STYLESHEETS -->
-  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="../../assets-shared/css/fonts.css">
   <link rel="stylesheet" href="../../assets-shared/css/basics.css">
   <link rel="stylesheet" href="../../assets-shared/css/buttons.css">
@@ -48,9 +47,50 @@
   <audio data-keyCode="86" src="samples/boom.wav"></audio>
 
   <!-- LOAD JAVASCRIPS AFTER PAGELOAD -->
+  <script src="../../assets-shared/js/buttons.js"></script>
 </body>
 </html>
 
+
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 10px;
+  z-index: 5;
+  margin: 0 auto;
+  max-width: 900px;
+  height: 600px;
+}
+.grid-item {
+  background-color: rgb(240,240,240);
+  color: rgb(15,15,15);
+  padding: 20px;
+  margin: 5px;
+  border-radius: 3px;
+  font-size: 30px;
+  text-align: center;
+  z-index: 4;
+}
+
+/* ALTERNATIVE COLORING (yellow / purple) */
+.yellow-bg {
+  background: #FFD303;
+  color: #11263F;
+}
+.grey-bg {
+  background: #11263F;
+  color: #FFD303;
+}
+.yellow-bg {
+  background: #FFD303;
+  color: #11263F;
+}
+.grey-bg {
+  background: #11263F;
+  color: #FFD303;
+}
+</style>
 
 <script>
   document.body.addEventListener("keydown", (event) => {
@@ -59,17 +99,4 @@
     audio.currentTime = 0;
     audio.play();
   });
-
-  const bttnBack = document.getElementById("bttn-back");
-  bttnBack.onclick = (e) => {
-    console.log("CLICKED!");
-    // SPECIAL CASE FOR HOSTING ON GITHUB PAGES!
-    if (window.origin.includes("github")) {
-      window.location = window.origin + "/javascript30-codingChalleges/";
-    // WHEN RUNNING LOCALLY!
-    } else {
-      window.location = window.origin;
-      console.log("else");
-    }
-  };
 </script>
