@@ -7,7 +7,7 @@ bttnBack.onclick = (e) => {
   console.log("CLICKED!");
   // SPECIAL CASE FOR HOSTING ON GITHUB PAGES!
   if (window.origin.includes("github")) {
-    window.location = window.origin + "/javascript30-codingChalleges/";
+    window.location = window.origin + "/javascript30-codingChallenges/";
   // WHEN RUNNING LOCALLY!
   } else {
     window.location = window.origin;
