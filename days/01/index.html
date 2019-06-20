@@ -15,18 +15,18 @@
   <div class="container">
     <h1 class="center">WebDrumkit</h1>
     <div class="grid-container">
-      <div data-keyValue="q" data-keyCode="81" class="grid-item yellow-bg">Q</div>
-      <div data-keyValue="w" data-keyCode="87" class="grid-item grey-bg">W</div>
-      <div data-keyValue="e" data-keyCode="69" class="grid-item yellow-bg">E</div>
-      <div data-keyValue="r" data-keyCode="82" class="grid-item grey-bg">R</div>
-      <div data-keyValue="a" data-keyCode="65" class="grid-item grey-bg">A</div>
-      <div data-keyValue="s" data-keyCode="83" class="grid-item yellow-bg">S</div>
-      <div data-keyValue="d" data-keyCode="68" class="grid-item grey-bg">D</div>
-      <div data-keyValue="f" data-keyCode="70" class="grid-item yellow-bg">F</div>
-      <div data-keyValue="y" data-keyCode="89" class="grid-item yellow-bg">Y</div>
-      <div data-keyValue="x" data-keyCode="88" class="grid-item grey-bg">X</div>
-      <div data-keyValue="c" data-keyCode="67" class="grid-item yellow-bg">C</div>
-      <div data-keyValue="v" data-keyCode="86" class="grid-item grey-bg">V</div>
+      <div data-keyValue="q" data-keyCode="81" class="grid-item">Q</div>
+      <div data-keyValue="w" data-keyCode="87" class="grid-item">W</div>
+      <div data-keyValue="e" data-keyCode="69" class="grid-item">E</div>
+      <div data-keyValue="r" data-keyCode="82" class="grid-item">R</div>
+      <div data-keyValue="a" data-keyCode="65" class="grid-item">A</div>
+      <div data-keyValue="s" data-keyCode="83" class="grid-item">S</div>
+      <div data-keyValue="d" data-keyCode="68" class="grid-item">D</div>
+      <div data-keyValue="f" data-keyCode="70" class="grid-item">F</div>
+      <div data-keyValue="y" data-keyCode="89" class="grid-item">Y</div>
+      <div data-keyValue="x" data-keyCode="88" class="grid-item">X</div>
+      <div data-keyValue="c" data-keyCode="67" class="grid-item">C</div>
+      <div data-keyValue="v" data-keyCode="86" class="grid-item">V</div>
     </div>
     <div class="flex justify-center">
       <a id="bttn-back" class="center block bttn bttn-round">BACK<a>
@@ -59,8 +59,8 @@
   padding: 10px;
   z-index: 5;
   margin: 0 auto;
-  max-width: 900px;
-  height: 600px;
+  max-width: 400px;
+  height: 300px;
 }
 .grid-item {
   background-color: rgb(240,240,240);
@@ -71,32 +71,33 @@
   font-size: 30px;
   text-align: center;
   z-index: 4;
+  transition: all 0.1s linear;
 }
-
-/* ALTERNATIVE COLORING (yellow / purple) */
-.yellow-bg {
-  background: #FFD303;
-  color: #11263F;
-}
-.grey-bg {
-  background: #11263F;
-  color: #FFD303;
-}
-.yellow-bg {
-  background: #FFD303;
-  color: #11263F;
-}
-.grey-bg {
-  background: #11263F;
-  color: #FFD303;
+.playing {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px grey;
 }
 </style>
 
+
 <script>
-  document.body.addEventListener("keydown", (event) => {
-    const audio = document.querySelector(`audio[data-keyCode="${event.keyCode}"]`);
-    console.log(audio);
+  // helper function
+  const removeTransition = (e) => {
+    if (e.propertyName !== 'transform') return;
+    e.target.classList.remove('playing');
+  };
+
+  // KEYDOWN eventlistener
+  document.body.addEventListener("keydown", (e) => {
+    const audio = document.querySelector(`audio[data-keyCode="${e.keyCode}"]`);
+    const key = document.querySelector(`div[data-keyCode="${e.keyCode}"]`);
+    if (!audio) return;
     audio.currentTime = 0;
     audio.play();
+    key.classList.add("playing");
   });
+
+  // TRANSITIONEND eventlistener
+  const keys = document.querySelectorAll('.grid-item');
+  keys.forEach(key => key.addEventListener("transitionend", removeTransition));
 </script>
