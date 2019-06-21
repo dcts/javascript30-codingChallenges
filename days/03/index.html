@@ -12,8 +12,15 @@
 </head>
 
 <body>
+  <div class="module"></div>
+
   <div class="container">
-    <h1 class="center ">CSS Variables</h1>
+    <h1 class="center ">Update CSS Variables with <span class="hl">JS</span></h1>
+
+    <div class="controls">
+
+    </div>
+    <img id="banner-img" src="https://images.pexels.com/photos/443383/pexels-photo-443383.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="">
 
     <!-- BACK BUTTON -->
     <div class="flex justify-center">
@@ -28,10 +35,58 @@
 
 <!-- INLINE STYLE -->
 <style>
+  :root {
+    --main-color: #7452ac;
+  }
+  body {
+    background-repeat: no-repeat;
+    background-size: contain;
 
+  }
+  .module {
+    position: relative;
+    background-image: url('https://picsum.photos/id/847/4477/2985');
+  }
+  .module::before {
+    filter:blur(5px);
+  }
+
+  .hl {
+    color: var(--main-color);
+  }
+
+  .controls {
+    border: 2px solid red;
+    width: 600px;
+    height: 150px;
+    margin: 0 auto;
+  }
+  img#banner-img {
+    /*border: 2px solid purple;*/
+    width: 400px;
+    height: 400px;
+    display: block;
+    margin: 40px auto;
+    border-radius: 1%;
+    filter: blur();
+  }
 </style>
 
 <!-- INLINE SCRIPT -->
 <script>
+  // get DOM Elements
 
+
+  //
+  fetch(`https://picsum.photos/v2/list?limit=100&page=${Math.ceil(Math.random()*9)}`)
+  .then((resp) => resp.json())
+  .then((data) => {
+    if (data) {
+      const url = data[Math.ceil(Math.random()*100)-1].download_url;
+      console.log(url);
+      document.body.style.backgroundImage = `url('${url}')`
+    }
+
+
+  });
 </script>
