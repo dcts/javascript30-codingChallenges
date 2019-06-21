@@ -53,6 +53,11 @@
         <input class="slider" id="grayscale" type="range" name="grayscale" min="0" max="100" value="0" data-sizing="%">
       </div>
 
+      <div class="controller-pair flex justify-space-between">
+        <label for="hue-rotate">Hue-Rotate:</label>
+        <input class="slider" id="hue-rotate" type="range" name="hue-rotate" min="0" max="360" value="0" data-sizing="deg">
+      </div>
+
       <br><br>
       <div class="flex justify-center">
         <a id="bttn-back" class="center block bttn bttn-round">BACK<a>
@@ -74,6 +79,7 @@
     --brightness: 100%;
     --contrast: 100%;
     --grayscale: 0%;
+    --hue-rotate: 0deg;
   }
   .bttn {
     background-color: var(--main-color);
@@ -93,7 +99,8 @@
       blur(var(--blur))
       brightness(var(--brightness))
       contrast(var(--contrast))
-      grayscale(var(--grayscale));
+      grayscale(var(--grayscale))
+      hue-rotate(var(--hue-rotate))
   }
   .toggled {
     height: 100vh;
