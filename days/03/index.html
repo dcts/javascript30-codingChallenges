@@ -58,6 +58,11 @@
         <input class="slider" id="hue-rotate" type="range" name="hue-rotate" min="0" max="360" value="0" data-sizing="deg">
       </div>
 
+      <div class="controller-pair flex justify-space-between">
+        <label for="invert">Invert:</label>
+        <input class="slider" id="invert" type="range" name="invert" min="0" max="100" value="0" data-sizing="%">
+      </div>
+
       <br><br>
       <div class="flex justify-center">
         <a id="bttn-back" class="center block bttn bttn-round">BACK<a>
@@ -80,6 +85,7 @@
     --contrast: 100%;
     --grayscale: 0%;
     --hue-rotate: 0deg;
+    --invert: 0%;
   }
   .bttn {
     background-color: var(--main-color);
@@ -101,6 +107,7 @@
       contrast(var(--contrast))
       grayscale(var(--grayscale))
       hue-rotate(var(--hue-rotate))
+      invert(var(--invert))
   }
   .toggled {
     height: 100vh;
