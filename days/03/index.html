@@ -12,20 +12,21 @@
 </head>
 
 <body>
-  <div class="module"></div>
+  <div style="display: flex;">
 
-  <div class="container">
-    <h1 class="center ">Update CSS Variables with <span class="hl">JS</span></h1>
-
-    <div class="controls">
-
+    <div>
+      <img class="image-left" src="" alt="">
     </div>
-    <img id="banner-img" src="https://images.pexels.com/photos/443383/pexels-photo-443383.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="">
 
-    <!-- BACK BUTTON -->
-    <div class="flex justify-center">
-      <a id="bttn-back" class="center block bttn bttn-round">BACK<a>
+    <div class="controller">
+      <h1 class="text-left">Image <span class="hl">Editor</span></h1>
+      <p class="text-left">
+        Manipulating CSS Variables with JavaScript and AJAX. This is my personal solution to the <a href="https://javascript30.com/">Javascript30</a> challenge by <a href="https://wesbos.com/">WESBOS</a>.
+      <p/>
+
+      <p id="new-image-bttn" class="bttn bttn-round">NEW IMAGE</p>
     </div>
+
   </div>
 
   <!-- LOAD JAVASCRIPS AFTER PAGELOAD -->
@@ -38,55 +39,80 @@
   :root {
     --main-color: #7452ac;
   }
-  body {
-    background-repeat: no-repeat;
-    background-size: contain;
 
+  h1, .controller > p {
+    margin: 40px;
   }
-  .module {
-    position: relative;
-    background-image: url('https://picsum.photos/id/847/4477/2985');
+  .image-left {
+    height: 100vh;
+    max-width: 70vw;
+    transition: width 1s ease;
   }
-  .module::before {
-    filter:blur(5px);
+  .toggled {
+    height: 100vh;
+    transition: width 1s ease;
+  }
+  .controller {
+    height: 100vh;
+    width: 400px;
   }
 
-  .hl {
-    color: var(--main-color);
-  }
-
-  .controls {
+  /*.controls {
     border: 2px solid red;
     width: 600px;
     height: 150px;
     margin: 0 auto;
   }
   img#banner-img {
-    /*border: 2px solid purple;*/
+    border: 2px solid purple;
     width: 400px;
     height: 400px;
     display: block;
     margin: 40px auto;
     border-radius: 1%;
     filter: blur();
+  }*/
+  .hl {
+    color: var(--main-color);
   }
+
 </style>
 
 <!-- INLINE SCRIPT -->
 <script>
   // get DOM Elements
+  const imgLeft = document.querySelector('.image-left');
+  const newImgBttn = document.getElementById('new-image-bttn');
+  console.log(newImgBttn);
 
 
+  let downloadingImage = new Image();
+
+  downloadingImage.onload = function(){
+    let targetWidth = this.width * (window.innerHeight / this.height);
+    targetWidth = Math.min(targetWidth, window.innerWidth * 0.7);
+    imgLeft.width = targetWidth;
+    imgLeft.src = this.src;
+    imgLeft.classList.add("toggled");
+  };
+
+  newImgBttn.addEventListener("click", () => {
+    console.log("hi");
+    getRandomImgUrl();
+
+  })
   //
-  fetch(`https://picsum.photos/v2/list?limit=100&page=${Math.ceil(Math.random()*9)}`)
-  .then((resp) => resp.json())
-  .then((data) => {
-    if (data) {
-      const url = data[Math.ceil(Math.random()*100)-1].download_url;
-      console.log(url);
-      document.body.style.backgroundImage = `url('${url}')`
-    }
+  const getRandomImgUrl = () => {
+    fetch(`https://picsum.photos/v2/list?limit=100&page=${Math.ceil(Math.random()*9)}`)
+    .then((resp) => resp.json())
+    .then((data) => {
+      if (data) {
+        downloadingImage.src = data[Math.ceil(Math.random()*100)-1].download_url;
+        imgLeft.classList.remove("toggled");
+      }
+    });
+  }
 
-
-  });
+  // INITIALIZATION (SKRIPT START)
+  getRandomImgUrl();
 </script>
