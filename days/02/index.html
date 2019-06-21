@@ -13,20 +13,19 @@
 
 <body>
   <div class="container">
-    <h1 class="center ">CSS Clock</h1>
+
+    <div id="digital-clock" class="flex justify-center align-center"></div>
 
     <div class="clock">
-      <div class="clock-handler"></div>
-      <div class="clock-handler"></div>
-      <div class="clock-handler"></div>
+      <div id="sec" class="clock-handler"></div>
+      <div id="min" class="clock-handler"></div>
+      <div id="hour" class="clock-handler"></div>
     </div>
-
 
     <div id="bttn-back" class="flex justify-center">
       <a class="center block bttn bttn-round">BACK<a>
     </div>
   </div>
-
   <!-- LOAD JAVASCRIPS AFTER PAGELOAD -->
   <script src="../../assets-shared/js/buttons.js"></script>
 </body>
@@ -34,27 +33,83 @@
 
 <!-- INLINE STYLE -->
 <style>
-#bttn-back {
-  margin: 20px;
-}
-
-.clock {
-  border: 30px solid rgba(0,0,0,0.72);
-  width: 300px;
-  height: 300px;
-  margin: 50px auto;
-  border-radius: 50%;
-  transition: all 0.2s ease;
-}.clock:hover {
-  border: 30px solid rgba(0,0,0,0.9);
-}
-.clock-handle {
-  position: absolute;
-}
+  #bttn-back {
+    margin: 20px;
+  }
+  #digital-clock > h1{
+    font-weight: 400;
+    font-size: 80px;
+    margin: 20px;
+  }
+  .clock {
+    border: 30px solid rgba(0,0,0,0.72);
+    width: 300px;
+    height: 300px;
+    margin: 50px auto;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    position: relative;
+  }.clock:hover {
+    border: 30px solid rgba(0,0,0,0.9);
+  }
+  .clock-handler {
+    position: absolute;
+    border-radius: 5px;
+    background-color: black;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    transition: all 1s ease;
+  }
+  #sec {
+    background-color: red;
+    height: 6px;
+    width: 145px;
+    top: 147px; /* take width of 6 px into account! 150-(6/2) = 147*/
+    left: 5px; /* substract height from 150! => 150-145 = 5px*/
+    transition-timing-function: linear;
+  }
+  #min {
+    height: 14px;
+    width: 135px;
+    top: 143px; /* take width of 14 px into account! 150-(width/2) = 143*/
+    left: 15px; /* substract height from 150! => 150-145 = 5px*/
+  }
+  #hour {
+    height: 22px;
+    width: 82px;
+    top: 139px; /* take width of 21 px into account! 150-(22/2) = 139*/
+    left: 68px; /* */
+  }
 </style>
-
 
 <!-- INLINE SCRIPT -->
 <script>
+  const getCurrentTime = () => {
+    const currentDate = new Date();
+    return {
+      hour: currentDate.getHours(),
+      min: currentDate.getMinutes(),
+      sec: currentDate.getSeconds()
+    }
+  }
+  const updateClock = () => {
+    const currTime = getCurrentTime();
+    digitalClock.innerHTML = `<h1>${Object.values(currTime).map(item => formatDigit(item)).join(":")}</h1>`;
+    setHandler(secHandler, currTime.sec);
+    setHandler(minHandler, currTime.min);
+    setHandler(hourHandler, currTime.hour);
+  }
+  // HELPER FUNCTION
+  const setHandler = (handler, pos) => handler.style.transform = `rotate(${90 + (pos * 6)}deg)`;
+  const formatDigit = num => (num.toString().length < 2 ? "0"+num : num).toString();
 
+  // get DOM elements
+  const digitalClock = document.getElementById('digital-clock');
+  const secHandler = document.getElementById('sec');
+  const minHandler = document.getElementById('min');
+  const hourHandler = document.getElementById('hour');
+
+  // start script
+  updateClock();
+  setInterval(updateClock, 1000);
 </script>
