@@ -11,6 +11,15 @@ body {
 .center {
   text-align: center;
 }
+.justify {
+  text-align: justify;
+}
+.text-medium {
+  font-size: 16px;
+}
+.text-small {
+  font-size: 12px;
+}
 .flex {
   display: flex;
 }
