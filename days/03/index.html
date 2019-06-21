@@ -43,6 +43,11 @@
         <input class="slider" id="brightness" type="range" name="brightness" min="0" max="200" value="100" data-sizing="%">
       </div>
 
+      <div class="controller-pair flex justify-space-between">
+        <label for="contrast">Contrast:</label>
+        <input class="slider" id="contrast" type="range" name="contrast" min="0" max="200" value="100" data-sizing="%">
+      </div>
+
       <br><br>
       <div class="flex justify-center">
         <a id="bttn-back" class="center block bttn bttn-round">BACK<a>
@@ -61,6 +66,8 @@
   :root {
     --main-color: rgb(116,82,172);
     --blur: 0px;
+    --brightness: 100%;
+    --contrast: 100%;
   }
   .bttn {
     background-color: var(--main-color);
@@ -76,7 +83,7 @@
   .image-left {
     height: 100vh;
     transition: width 1s ease;
-    filter: blur(var(--blur)) brightness(var(--brightness));
+    filter: blur(var(--blur)) brightness(var(--brightness)) contrast(var(--contrast));
   }
   .toggled {
     height: 100vh;
