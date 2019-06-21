@@ -14,12 +14,14 @@
 <body>
   <div class="container">
     <h1 class="center">CSS <span class="primary-col">Clock</span></h1>
-    <div id="digital-clock" class="flex justify-center align-center"></div>
+    <div id="digital-clock-card" class="flex justify-center align-center shadow-decent"></div>
 
-    <div class="clock">
-      <div id="sec" class="clock-handler"></div>
-      <div id="min" class="clock-handler"></div>
-      <div id="hour" class="clock-handler"></div>
+    <div id="analog-clock-card" class="flex justify-center shadow-decent">
+      <div class="clock shadow-decent">
+        <div id="sec" class="clock-handler"></div>
+        <div id="min" class="clock-handler"></div>
+        <div id="hour" class="clock-handler"></div>
+      </div>
     </div>
 
     <div id="bttn-back" class="flex justify-center">
@@ -36,12 +38,31 @@
   #bttn-back {
     margin: 20px;
   }
-  #digital-clock > h1{
+  #analog-clock-card {
+    background-color: rgb(15,15,15);
+    width: 312px;
+    height: 312px;
+    margin: 30px auto;
+    padding: 0px 0;
+    border-radius: 20px;
+  }
+  #digital-clock-card {
+    background-color: rgb(15,15,15);
+    letter-spacing: 9px;
+    width: 312px;
+    margin: 0 auto;
+    border-radius: 20px;
+    margin-top: 50px;
+    color: rgb(240,240,240);
+    font-weight: bold;
+  }
+  #digital-clock-card > h1{
     font-weight: 400;
     margin: 20px;
   }
   .clock {
-    border: 20px solid rgba(0,0,0,0.72);
+    background-color: rgb(240,240,240);
+    border: 20px solid rgb(240,240,240);
     width: 200px;
     height: 200px;
     margin: 30px auto 50px auto;
@@ -49,7 +70,7 @@
     transition: all 0.2s ease;
     position: relative;
   }.clock:hover {
-    border: 20px solid rgba(0,0,0,0.9);
+    /*border: 20px solid rgba(0,0,0,0.9);*/
   }
   .clock-handler {
     position: absolute;
@@ -121,7 +142,7 @@
   const setHandler = (handler, degree) => handler.style.transform = `rotate(${degree}deg)`;
 
   // get DOM elements
-  const digitalClock = document.getElementById('digital-clock');
+  const digitalClock = document.getElementById('digital-clock-card');
   const secHandler = document.getElementById('sec');
   const minHandler = document.getElementById('min');
   const hourHandler = document.getElementById('hour');
