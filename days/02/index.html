@@ -15,8 +15,16 @@
   <div class="container">
     <h1 class="center ">CSS Clock</h1>
 
-    <div class="flex justify-center">
-      <a id="bttn-back" class="center block bttn bttn-round">BACK<a>
+    <div class="clock-container">
+      <svg id="clock-svg">
+        <circle />
+        <text x="20" y="40">Example SVG text 1</text>
+      </svg>
+
+    </div>
+
+    <div id="bttn-back" class="flex justify-center">
+      <a class="center block bttn bttn-round">BACK<a>
     </div>
   </div>
 
@@ -27,7 +35,33 @@
 
 <!-- INLINE STYLE -->
 <style>
+#bttn-back {
+  margin: 20px;
+}
+#clock-svg {
+  /*border: 3px solid green;*/
+  width: 400px;
+  height: 400px;
+}
+#clock-svg > circle {
+  cx: 200;
+  cy: 200;
+  r: 150;
+  stroke: black;
+  stroke-width: 4;
+  fill: white;
+  transition: all 1s ease;
+}
+#clock-svg > circle:hover {
+  fill: red;
+}
 
+.clock-container {
+  /*border: 3px solid red;*/
+  margin: 0 auto;
+  width: 400px;
+  height: 400px;
+}
 </style>
 
 
