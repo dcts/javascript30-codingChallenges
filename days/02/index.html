@@ -13,7 +13,7 @@
 
 <body>
   <div class="container">
-
+    <h1 class="center">CSS <span class="primary-col">Clock</span></h1>
     <div id="digital-clock" class="flex justify-center align-center"></div>
 
     <div class="clock">
@@ -38,19 +38,18 @@
   }
   #digital-clock > h1{
     font-weight: 400;
-    font-size: 80px;
     margin: 20px;
   }
   .clock {
-    border: 30px solid rgba(0,0,0,0.72);
-    width: 300px;
-    height: 300px;
-    margin: 50px auto;
+    border: 20px solid rgba(0,0,0,0.72);
+    width: 200px;
+    height: 200px;
+    margin: 30px auto 50px auto;
     border-radius: 50%;
     transition: all 0.2s ease;
     position: relative;
   }.clock:hover {
-    border: 30px solid rgba(0,0,0,0.9);
+    border: 20px solid rgba(0,0,0,0.9);
   }
   .clock-handler {
     position: absolute;
@@ -62,23 +61,23 @@
   }
   #sec {
     background-color: red;
-    height: 6px;
-    width: 145px;
-    top: 147px; /* take width of 6 px into account! 150-(6/2) = 147*/
-    left: 5px; /* substract height from 150! => 150-145 = 5px*/
+    height: 4px;
+    top: 98px; /* 100-(4/2) = 98px */
+    width: 90px;
+    left: 10px; /* 100-90 = 10px */
     transition-timing-function: linear;
   }
   #min {
-    height: 14px;
-    width: 135px;
-    top: 143px; /* take width of 14 px into account! 150-(width/2) = 143*/
-    left: 15px; /* substract height from 150! => 150-145 = 5px*/
+    height: 10px;
+    top: 95px; /* 100-(10/2) = 95px*/
+    width: 85px;
+    left: 15px; /* 100-85 = 15px*/
   }
   #hour {
-    height: 22px;
-    width: 82px;
-    top: 139px; /* take width of 21 px into account! 150-(22/2) = 139*/
-    left: 68px; /* */
+    height: 14px;
+    top: 93px; /* 100-(14/2) = 93px*/
+    width: 55px;
+    left: 45px; /* 100-55 = 45px*/
   }
 </style>
 

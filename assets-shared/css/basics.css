@@ -20,6 +20,9 @@ body {
 .text-small {
   font-size: 12px;
 }
+.primary-col {
+  color: slateblue;
+}
 .flex {
   display: flex;
 }
