@@ -84,24 +84,42 @@
 
 <!-- INLINE SCRIPT -->
 <script>
-  const getCurrentTime = () => {
+  const initializeClock = () => {
     const currentDate = new Date();
-    return {
-      hour: currentDate.getHours(),
-      min: currentDate.getMinutes(),
-      sec: currentDate.getSeconds()
-    }
+    setDigitalClock();
+    degreeSec  +=  currentDate.getSeconds() * 6;
+    degreeMin  +=  currentDate.getMinutes() * 6;
+    degreeHour += (currentDate.getHours() % 12) * 5 * 6;
+    updateHandlers();
   }
+
   const updateClock = () => {
-    const currTime = getCurrentTime();
-    digitalClock.innerHTML = `<h1>${Object.values(currTime).map(item => formatDigit(item)).join(":")}</h1>`;
-    setHandler(secHandler, currTime.sec);
-    setHandler(minHandler, currTime.min);
-    setHandler(hourHandler, (currTime.hour % 12 + (currTime.min/60)) * 5);
+    setDigitalClock();
+    degreeSec  += (360 / 60);
+    degreeMin  += (360 / 60 / 60);
+    degreeHour += (360 / 12 / 60 / 60);
+    updateHandlers();
+    console.log(`${degreeHour.toFixed(2)} deg | ${degreeMin.toFixed(2)} deg | ${degreeSec.toFixed(2)} deg`);
+  }
+
+  const updateHandlers = () => {
+    setHandler(secHandler, degreeSec);
+    setHandler(minHandler, degreeMin);
+    setHandler(hourHandler, degreeHour);
+  }
+
+  const setDigitalClock = () => {
+    const currentDate = new Date();
+    const now = {
+      sec: formatDigit(currentDate.getSeconds()),
+      min: formatDigit(currentDate.getMinutes()),
+      hour: formatDigit(currentDate.getHours())
+    }
+    digitalClock.innerHTML = `<h1>${now.hour}:${now.min}:${now.sec}</h1>`;
   }
   // HELPER FUNCTION
-  const setHandler = (handler, pos) => handler.style.transform = `rotate(${90 + (pos * 6)}deg)`;
   const formatDigit = num => (num.toString().length < 2 ? "0"+num : num).toString();
+  const setHandler = (handler, degree) => handler.style.transform = `rotate(${degree}deg)`;
 
   // get DOM elements
   const digitalClock = document.getElementById('digital-clock');
@@ -110,6 +128,9 @@
   const hourHandler = document.getElementById('hour');
 
   // start script
-  updateClock();
+  let degreeSec  = 90;
+  let degreeMin  = 90;
+  let degreeHour = 90;
+  initializeClock();
   setInterval(updateClock, 1000);
 </script>
