@@ -19,15 +19,31 @@
     </div>
 
     <div class="controller">
-      <h1>Image <span class="hl">Editor</span></h1>
+      <h1 class="center">Image <span class="hl">Editor</span></h1>
       <p class="text-medium justify">
         Manipulating CSS Variables with JavaScript and AJAX. This is my personal solution to the <a href="https://javascript30.com/">Javascript30</a> challenge of day 3. The images are randomly fetched from the <a href="https://www.pexels.com/api/">Pexels API</a> and the quotes are taken from the <a href="https://www.forbes.com/sites/kevinkruse/2013/05/28/inspirational-quotes/#87965d46c7ac">Forbes magazine</a>.
       <p/>
 
       <p id="new-image-bttn" class="bttn bttn-round">NEW IMAGE</p>
+      <p id="new-quote-bttn" class="bttn bttn-round">NEW QUOTE</p>
 
-      <div id="bttn-back" class="flex justify-center">
-        <a class="center block bttn bttn-round">BACK<a>
+      <div class="controller-pair">
+        <label for="spacing">Spacing:</label>
+        <input id="spacing" type="range" name="spacing" min="10" max="200" value="10" data-sizing="px">
+      </div>
+
+      <div class="controller-pair">
+        <label for="blur">Blur:</label>
+        <input id="blur" type="range" name="blur" min="0" max="25" value="0" data-sizing="px">
+      </div>
+
+      <div class="controller-pair">
+        <label for="base">Base Color</label>
+        <input id="base" type="color" name="base" value="#7452ac">
+      </div>
+
+      <div class="flex justify-center">
+        <a id="bttn-back" class="center block bttn bttn-round">BACK<a>
       </div>
     </div>
 
@@ -46,8 +62,9 @@
   .bttn {
     background-color: var(--main-color);
   }
-  h1, .controller > p {
-    margin: 40px;
+  p, h1, .controller-pair {
+    margin-left: 40px;
+    margin-right: 40px;
   }
   .image-left {
     height: 100vh;
@@ -60,7 +77,7 @@
   }
   .controller {
     height: 100vh;
-    width: 400px;
+    width: 500px;
   }
   .hl {
     color: var(--main-color);
@@ -72,10 +89,13 @@
   // get DOM Elements
   const imgLeft = document.querySelector('.image-left');
   const newImgBttn = document.getElementById('new-image-bttn');
-  console.log(newImgBttn);
-
+  const newQuoteBttn = document.getElementById('new-quote-bttn');
+  const inputs = document.querySelectorAll('input');
+  // define variables
   let downloadingImage = new Image();
 
+  // ADD EVENT LISTENERS
+  // wait till picture is loaded before updating!
   downloadingImage.onload = function(){
     let targetWidth = this.width * (window.innerHeight / this.height);
     targetWidth = Math.min(targetWidth, window.innerWidth * 0.7);
@@ -83,13 +103,19 @@
     imgLeft.src = this.src;
     imgLeft.classList.add("toggled");
   };
-
-  newImgBttn.addEventListener("click", () => {
-    console.log("hi");
-    getRandomImgUrl();
+  // add click events
+  newImgBttn.addEventListener("click", () => randomImage());  // random image
+  newQuoteBttn.addEventListener("click", () => randomQuote()); // random quote
+  // add change events
+  inputs.forEach((input) => {
+    console.log(input);
+    input.addEventListener("click", (e) => {
+      console.log(e);
+    });
   });
 
-  const getRandomImgUrl = () => {
+  // fetch data from API to get new image
+  const randomImage = () => {
     fetch(`https://picsum.photos/v2/list?limit=100&page=${Math.ceil(Math.random()*9)}`)
     .then((resp) => resp.json())
     .then((data) => {
@@ -99,7 +125,12 @@
       }
     });
   }
-
+  // generate new quotes onclick
+  // randomly take a quota from JSON file
+  const randomQuote = () => {
+    console.log("geting random quote...");
+  }
   // INITIALIZATION (SKRIPT START)
-  getRandomImgUrl();
+  randomImage();
+  randomQuote();
 </script>
