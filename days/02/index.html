@@ -97,7 +97,7 @@
     digitalClock.innerHTML = `<h1>${Object.values(currTime).map(item => formatDigit(item)).join(":")}</h1>`;
     setHandler(secHandler, currTime.sec);
     setHandler(minHandler, currTime.min);
-    setHandler(hourHandler, currTime.hour);
+    setHandler(hourHandler, (currTime.hour % 12 + (currTime.min/60)) * 5);
   }
   // HELPER FUNCTION
   const setHandler = (handler, pos) => handler.style.transform = `rotate(${90 + (pos * 6)}deg)`;
