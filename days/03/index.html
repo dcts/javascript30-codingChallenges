@@ -38,6 +38,11 @@
         <input class="slider" id="blur" type="range" name="blur" min="0" max="25" value="0" data-sizing="px">
       </div>
 
+      <div class="controller-pair flex justify-space-between">
+        <label for="brightness">Brightness:</label>
+        <input class="slider" id="brightness" type="range" name="brightness" min="0" max="200" value="100" data-sizing="%">
+      </div>
+
       <br><br>
       <div class="flex justify-center">
         <a id="bttn-back" class="center block bttn bttn-round">BACK<a>
@@ -71,7 +76,7 @@
   .image-left {
     height: 100vh;
     transition: width 1s ease;
-    filter: blur(var(--blur));
+    filter: blur(var(--blur)) brightness(var(--brightness));
   }
   .toggled {
     height: 100vh;
