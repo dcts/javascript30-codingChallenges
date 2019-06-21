@@ -21,27 +21,24 @@
     <div class="controller">
       <h1 class="center">Image <span class="hl">Editor</span></h1>
       <p class="text-medium justify">
-        Manipulating CSS Variables with JavaScript and AJAX. This is my personal solution to the <a href="https://javascript30.com/">Javascript30</a> challenge of day 3. The images are randomly fetched from the <a href="https://www.pexels.com/api/">Pexels API</a> and the quotes are taken from the <a href="https://www.forbes.com/sites/kevinkruse/2013/05/28/inspirational-quotes/#87965d46c7ac">Forbes magazine</a>.
+        Manipulating CSS Variables with JavaScript and AJAX. This is my personal solution to the <a href="https://javascript30.com/" target="_blank">Javascript30</a> challenge of day 3. The images are randomly fetched from the <a href="https://www.pexels.com/api/" target="_blank">Pexels API</a> and the quotes are taken from the <a href="https://www.forbes.com/sites/kevinkruse/2013/05/28/inspirational-quotes/#87965d46c7ac" target="_blank">Forbes magazine</a>.
       <p/>
 
       <p id="new-image-bttn" class="bttn bttn-round">NEW IMAGE</p>
       <p id="new-quote-bttn" class="bttn bttn-round">NEW QUOTE</p>
 
-      <div class="controller-pair">
-        <label for="spacing">Spacing:</label>
-        <input id="spacing" type="range" name="spacing" min="10" max="200" value="10" data-sizing="px">
-      </div>
-
-      <div class="controller-pair">
-        <label for="blur">Blur:</label>
-        <input id="blur" type="range" name="blur" min="0" max="25" value="0" data-sizing="px">
-      </div>
-
-      <div class="controller-pair">
+      <br>
+      <div class="controller-pair flex justify-space-between">
         <label for="base">Base Color</label>
-        <input id="base" type="color" name="base" value="#7452ac">
+        <input id="base" type="color" name="main-color" value="#7452ac">
       </div>
 
+      <div class="controller-pair flex justify-space-between">
+        <label for="blur">Blur:</label>
+        <input class="slider" id="blur" type="range" name="blur" min="0" max="25" value="0" data-sizing="px">
+      </div>
+
+      <br><br>
       <div class="flex justify-center">
         <a id="bttn-back" class="center block bttn bttn-round">BACK<a>
       </div>
@@ -57,10 +54,15 @@
 <!-- INLINE STYLE -->
 <style>
   :root {
-    --main-color: slateblue;
+    --main-color: rgb(116,82,172);
+    --blur: 0px;
   }
   .bttn {
     background-color: var(--main-color);
+  }
+  .bttn:hover {
+    background-color: rgb(240,240,240);
+    color: rgb(15,15,15);
   }
   p, h1, .controller-pair {
     margin-left: 40px;
@@ -68,8 +70,8 @@
   }
   .image-left {
     height: 100vh;
-    max-width: 70vw;
     transition: width 1s ease;
+    filter: blur(var(--blur));
   }
   .toggled {
     height: 100vh;
@@ -78,9 +80,13 @@
   .controller {
     height: 100vh;
     width: 500px;
+    min-width: 320px;
   }
   .hl {
     color: var(--main-color);
+  }
+  input.slider {
+    width: 180px;
   }
 </style>
 
@@ -93,43 +99,39 @@
   const inputs = document.querySelectorAll('input');
   // define variables
   let downloadingImage = new Image();
-
-  // ADD EVENT LISTENERS
-  // wait till picture is loaded before updating!
-  downloadingImage.onload = function(){
+  downloadingImage.onload = function() {
     let targetWidth = this.width * (window.innerHeight / this.height);
-    targetWidth = Math.min(targetWidth, window.innerWidth * 0.7);
+    targetWidth = Math.min(targetWidth, window.innerWidth * 0.65);
     imgLeft.width = targetWidth;
     imgLeft.src = this.src;
     imgLeft.classList.add("toggled");
   };
-  // add click events
-  newImgBttn.addEventListener("click", () => randomImage());  // random image
-  newQuoteBttn.addEventListener("click", () => randomQuote()); // random quote
-  // add change events
-  inputs.forEach((input) => {
-    console.log(input);
-    input.addEventListener("click", (e) => {
-      console.log(e);
-    });
-  });
 
+  // ADD EVENT LISTENERS
   // fetch data from API to get new image
   const randomImage = () => {
     fetch(`https://picsum.photos/v2/list?limit=100&page=${Math.ceil(Math.random()*9)}`)
     .then((resp) => resp.json())
     .then((data) => {
-      if (data) {
-        downloadingImage.src = data[Math.ceil(Math.random()*100)-1].download_url;
-        imgLeft.classList.remove("toggled");
-      }
+      downloadingImage.src = data[Math.ceil(Math.random()*100)-1].download_url;
+      imgLeft.classList.remove("toggled");
     });
-  }
-  // generate new quotes onclick
-  // randomly take a quota from JSON file
+  };
+  // randomly grab a quota from JSON file
   const randomQuote = () => {
-    console.log("geting random quote...");
-  }
+  };
+  // add button click functionality
+  newImgBttn.addEventListener("click", () => randomImage());  // random image
+  newQuoteBttn.addEventListener("click", () => randomQuote()); // random quote
+
+  function updateEffects() {
+    const suffix = this.dataset.sizing || '';
+    document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+  };
+  // add change events
+  inputs.forEach(input => input.addEventListener("change", updateEffects));
+  inputs.forEach(input => input.addEventListener("mousemove", updateEffects));
+
   // INITIALIZATION (SKRIPT START)
   randomImage();
   randomQuote();
