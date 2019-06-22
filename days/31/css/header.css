@@ -1,5 +1,9 @@
 .sticky-header {
+	position:absolute; 
+	height:80px; 
+	top:0; 
+	width:100%; 
+	left:0; 
 	background-color: var(--orange);
 	color: var(--white);
-	height: 79px;
 }

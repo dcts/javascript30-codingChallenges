@@ -17,45 +17,113 @@
 </head>
 
 <body>
-    <!-- TODO HERE -->
-    <h1 class="center ">Radio Player Challenge</h1>
+  <h1 class="center ">Radio Player Challenge</h1>
     
-    <div class="flex justify-center">
+  <div class="flex justify-center">
 
-      <div class="radio-player">
-        <div class="sticky-header">
-          <div class="flex align-center justify-space-between">
-            <p class="bttn-back"></p>
-            <h1 id="title">STATIONS</h1>
-            <p class="bttn-off"></p>
-          </div>
-        </div>
+    <div id="radio-player">
 
-
-        <div class="raido-cards">
-          <div class="radio-card">
-            <div class="flex justify-space-between">
-              <p class="radio-title">Putin FM</p>
-              <p class="radio-fq">66,6</p>
-            </div>
-            <div id="expanded" class="flex justify-space-between">
-              <p class="minus">-</p>
-              <img class="radio-avatar" src="">
-              <p class="plus">+</p>
-            </div>  
-          </div>
-        </div>
-        
-        <div class="sticky-footer">
+      <div class="sticky-header">
+        <div class="flex align-center justify-space-between">
+          <p class="bttn-back"></p>
+          <h1 id="title">STATIONS</h1>
+          <p class="bttn-off"></p>
         </div>
       </div>
-      
-      <img src="task.png" alt="">
-    </div>    
 
-    <div class="flex justify-center">
-      <a id="bttn-back" class="center block bttn bttn-round">BACK<a>
+
+      <div id="raido-cards">
+        <div class="radio-card">
+          <div class="flex justify-space-between">
+            <p class="radio-title">Putin FM</p>
+            <p class="radio-fq">66,6</p>
+          </div>
+          <div class="flex justify-space-between hidden">
+            <p class="minus">-</p>
+            <img class="radio-avatar" src="">
+            <p class="plus">+</p>
+          </div>  
+        </div>
+        <hr>
+
+        <div class="radio-card">
+          <div class="flex justify-space-between">
+            <p class="radio-title">Dribble FM</p>
+            <p class="radio-fq">66,6</p>
+          </div>
+          <div class="flex justify-space-between hidden">
+            <p class="minus">-</p>
+            <img class="radio-avatar" src="">
+            <p class="plus">+</p>
+          </div>  
+        </div>
+        <hr>
+
+        <div class="radio-card">
+          <div class="flex justify-space-between">
+            <p class="radio-title">Doge FM</p>
+            <p class="radio-fq">66,6</p>
+          </div>
+          <div class="flex justify-space-between hidden">
+            <p class="minus">-</p>
+            <img class="radio-avatar" src="">
+            <p class="plus">+</p>
+          </div>  
+        </div>
+        <hr>
+
+        <div class="radio-card">
+          <div class="flex justify-space-between">
+            <p class="radio-title">Ballads FM</p>
+            <p class="radio-fq">66,6</p>
+          </div>
+          <div class="flex justify-space-between hidden">
+            <p class="minus">-</p>
+            <img class="radio-avatar" src="">
+            <p class="plus">+</p>
+          </div>  
+        </div>
+        <hr>
+
+        <div class="radio-card">
+          <div class="flex justify-space-between">
+            <p class="radio-title">Maximum FM</p>
+            <p class="radio-fq">66,6</p>
+          </div>
+          <div class="flex justify-space-between hidden">
+            <p class="minus">-</p>
+            <img class="radio-avatar" src="">
+            <p class="plus">+</p>
+          </div>  
+        </div>
+        <hr>
+
+        <div class="radio-card">
+          <div class="flex justify-space-between">
+            <p class="radio-title">Bitcoin FM</p>
+            <p class="radio-fq">66,6</p>
+          </div>
+          <div class="flex justify-space-between hidden">
+            <p class="minus">-</p>
+            <img class="radio-avatar" src="">
+            <p class="plus">+</p>
+          </div>  
+        </div>
+        <hr>
+
+      </div>
+      
+      <div class="sticky-footer"></div>
+
     </div>
+      
+    <img src="task.png" alt="">
+    
+  </div>    
+
+  <div class="flex justify-center">
+    <a id="bttn-back" class="center block bttn bttn-round">BACK<a>
+  </div>
 
 
   <!-- LOAD JAVASCRIPS AFTER PAGELOAD -->
@@ -67,6 +135,12 @@
 
 <!-- INLINE STYLE -->
 <style>
+  ::-webkit-scrollbar {display: none;}
+
+
+  
+
+
   :root {
     --bg: #21212b;
     --bg-card: #2f2f39;
@@ -76,6 +150,7 @@
     --white-blue: #a3a7be;
     --line: #606571;
   }
+  
   body {
     background-color: var(--bg);
     color: var(--white);
@@ -83,12 +158,17 @@
   h1 {
     font-size: 22px;
   }
-  .radio-player {
+  #radio-player {
     /*border: 1px solid red;*/
+    position: relative;
     margin: 42px 22px;
     width: 315px;
-    height: 495px;
     background-color: var(--bg-card);
+    display: inline-block;
+    border-radius: 23px;
+    overflow: hidden;
+    box-shadow: 0 0 10px black;
+    box-shadow: 0 4px 108px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 </style>
 
