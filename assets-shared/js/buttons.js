@@ -1,5 +1,5 @@
 // SAY HI
-console.log("JS TRIGGERED: buttons.js");
+console.log("TRIGGERED: buttons.js");
 
 // BACK BUTTON
 const bttnBack = document.getElementById("bttn-back");
