@@ -29,9 +29,9 @@
       <div class="sticky-header">
         <div class="flex justify-space-between align-center">
           <!-- <p class="bttn-back"><i class="fa fa-chevron-left"></i></p> -->
-          <img class="bttn-back" src="img/back-2.svg">
+          <img id="bttn-arrow" src="img/back-2.svg">
           <h1 id="title">STATIONS</h1>
-          <img class="bttn-off" src="img/power.svg">
+          <img id="bttn-power" src="img/power.svg">
           <!-- <img src="https://img.icons8.com/ios-glyphs/30/000000/shutdown.png"> -->
           <!-- <p class="bttn-off"><i class="fa fa-power-off"></i></p> -->
         </div>
@@ -206,16 +206,27 @@
     position: relative;
     margin: 42px 22px;
     width: 315px;
+    height: 500px;
     background-color: var(--bg-card);
     display: inline-block;
     border-radius: 23px;
     overflow: hidden;
     box-shadow: 0 0 10px black;
     box-shadow: 0 4px 108px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: all 1s ease;
+  }
+  .closed {
+    height: 160px !important;
+    transform: rotate(360deg);
+    transition: all 1s ease;
   }
 </style>
 
 <!-- INLINE SCRIPT -->
 <script>
+  const bttnPower = document.getElementById("bttn-power");
+  const radioPlayer = document.getElementById("radio-player");
+  const title = document.getElementById("title");
 
+  bttnPower.addEventListener("click", () => radioPlayer.classList.toggle("closed"));
 </script>

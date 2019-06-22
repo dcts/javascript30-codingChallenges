@@ -20,9 +20,11 @@
   font-family: 'Cerebri Bold';
   font-size: 22px;
 }
-
-.bttn-back, .bttn-off {
-  /*border: 2px solid white;*/
-  /*font-size: 32px;*/
+#bttn-arrow, #bttn-power {
   width: 28px;
+  transition: transform 1s ease;
+}#bttn-arrow:hover, #bttn-power:hover {
+  transform: rotate(360deg);
+  /*width: 32px;
+  margin-left: -4px;*/
 }
