@@ -19,10 +19,12 @@
 <body>
   <h1 class="center ">Radio Player Challenge</h1>
 
+  <!-- BEGIN: Flexbox with 2 items: my Solution (.radio-player) and design template (as img)  -->
   <div class="flex justify-center">
-
+    <!-- BEGIN: Radio Player -->
     <div id="radio-player">
 
+      <!-- BEGIN: Header -->
       <div class="sticky-header">
         <div class="flex justify-space-between align-center">
           <p class="bttn-back"></p>
@@ -30,107 +32,132 @@
           <p class="bttn-off"></p>
         </div>
       </div>
+      <!-- PLACEHOLDER TO PUSH CONTET DOWN (same size as header!) -->
       <div id="placeholder"></div>
+      <!-- END: Header -->
 
-
-      <!-- BEGIN: Radio Cards -->
+      <!-- BEGIN: Radio Cards Parent -->
       <div class="radio-cards-parent">
-      <div class="raido-cards">
-        <div class="radio-card">
-          <div class="card-top flex justify-space-between">
-            <p class="radio-title">Putin FM</p>
-            <p class="radio-fq">66,6</p>
-          </div>
-          <div class="card-extend flex justify-space-between hidden">
-            <p class="minus">-</p>
-            <img class="radio-avatar" src="">
-            <p class="plus">+</p>
-          </div>
-        </div>
-        <hr>
+        <!-- BEGIN: Radio Cards -->
+        <div class="raido-cards">
 
-        <div class="radio-card">
-          <div class="card-top flex justify-space-between">
-            <p class="radio-title">Dribble FM</p>
-            <p class="radio-fq">101,2</p>
+          <!-- BEGIN: Radio Card -->
+          <div class="radio-card">
+            <div class="card-top flex justify-space-between">
+              <p class="radio-title">Putin FM</p>
+              <p class="radio-fq">66,6</p>
+            </div>
+            <div class="card-extend flex justify-space-between hidden">
+              <p class="minus">-</p>
+              <img class="radio-avatar" src="">
+              <p class="plus">+</p>
+            </div>
           </div>
-          <div class="card-extend flex justify-space-between hidden">
-            <p class="minus">-</p>
-            <img class="radio-avatar" src="">
-            <p class="plus">+</p>
-          </div>
-        </div>
-        <hr>
+          <!-- END: Radio Card -->
 
-        <div class="radio-card">
-          <div class="card-top flex justify-space-between">
-            <p class="radio-title">Doge FM</p>
-            <p class="radio-fq">99,4</p>
-          </div>
-          <div class="card-extend flex justify-space-between hidden">
-            <p class="minus">-</p>
-            <img class="radio-avatar" src="">
-            <p class="plus">+</p>
-          </div>
-        </div>
-        <hr>
+          <hr>
 
-        <div class="radio-card">
-          <div class="card-top flex justify-space-between">
-            <p class="radio-title">Ballads FM</p>
-            <p class="radio-fq">87,1</p>
+          <!-- BEGIN: Radio Card -->
+          <div class="radio-card">
+            <div class="card-top flex justify-space-between">
+              <p class="radio-title">Dribble FM</p>
+              <p class="radio-fq">101,2</p>
+            </div>
+            <div class="card-extend flex justify-space-between hidden">
+              <p class="minus">-</p>
+              <img class="radio-avatar" src="">
+              <p class="plus">+</p>
+            </div>
           </div>
-          <div class="card-extend flex justify-space-between hidden">
-            <p class="minus">-</p>
-            <img class="radio-avatar" src="">
-            <p class="plus">+</p>
-          </div>
-        </div>
-        <hr>
+          <!-- END: Radio Card -->
 
-        <div class="radio-card">
-          <div class="card-top flex justify-space-between">
-            <p class="radio-title">Maximum FM</p>
-            <p class="radio-fq">142,2</p>
-          </div>
-          <div class="card-extend flex justify-space-between hidden">
-            <p class="minus">-</p>
-            <img class="radio-avatar" src="">
-            <p class="plus">+</p>
-          </div>
-        </div>
+          <hr>
 
-        <hr>
-        <div class="radio-card">
-          <div class="card-top flex justify-space-between">
-            <p class="radio-title">Bitcoin FM</p>
-            <p class="radio-fq">66,6</p>
+          <!-- BEGIN: Radio Card -->
+          <div class="radio-card">
+            <div class="card-top flex justify-space-between">
+              <p class="radio-title">Doge FM</p>
+              <p class="radio-fq">99,4</p>
+            </div>
+            <div class="card-extend flex justify-space-between hidden">
+              <p class="minus">-</p>
+              <img class="radio-avatar" src="">
+              <p class="plus">+</p>
+            </div>
           </div>
-          <div class="card-extend flex justify-space-between hidden">
-            <p class="minus">-</p>
-            <img class="radio-avatar" src="">
-            <p class="plus">+</p>
-          </div>
-        </div>
-        <!--  ADDITIONAL CARD TO ADD OVERFLOW
+          <!-- END: Radio Card -->
 
-        -->
-      <!-- END: Radio Cards -->
+          <hr>
+
+          <!-- BEGIN: Radio Card -->
+          <div class="radio-card">
+            <div class="card-top flex justify-space-between">
+              <p class="radio-title">Ballads FM</p>
+              <p class="radio-fq">87,1</p>
+            </div>
+            <div class="card-extend flex justify-space-between hidden">
+              <p class="minus">-</p>
+              <img class="radio-avatar" src="">
+              <p class="plus">+</p>
+            </div>
+          </div>
+          <!-- END: Radio Card -->
+
+          <hr>
+
+          <!-- BEGIN: Radio Card -->
+          <div class="radio-card">
+            <div class="card-top flex justify-space-between">
+              <p class="radio-title">Maximum FM</p>
+              <p class="radio-fq">142,2</p>
+            </div>
+            <div class="card-extend flex justify-space-between hidden">
+              <p class="minus">-</p>
+              <img class="radio-avatar" src="">
+              <p class="plus">+</p>
+            </div>
+          </div>
+          <!-- END: Radio Card -->
+
+          <hr>
+
+          <!-- BEGIN: Radio Card -->
+          <div class="radio-card">
+            <div class="card-top flex justify-space-between">
+              <p class="radio-title">Bitcoin FM</p>
+              <p class="radio-fq">66,6</p>
+            </div>
+            <div class="card-extend flex justify-space-between hidden">
+              <p class="minus">-</p>
+              <img class="radio-avatar" src="">
+              <p class="plus">+</p>
+            </div>
+          </div>
+          <!-- END: Radio Card -->
+
+        </div>
+        <!-- END: Radio Cards -->
       </div>
-      </div>
+      <!-- END: Radio Cards Parent -->
 
+      <!-- BEGIN: Footer -->
       <div class="sticky-footer"></div>
+      <!-- END: Footer -->
 
     </div>
+    <!-- END: Radio Player -->
 
+    <!-- IMG OF ORIGINAL TAST -->
     <img src="task.png" alt="">
 
   </div>
+  <!-- END: Flexbox with 2 Items -->
 
+  <!-- BEGIN: back button to main -->
   <div class="flex justify-center">
     <a id="bttn-back" class="center block bttn bttn-round">BACK<a>
   </div>
-
+  <!-- END: back button to main -->
 
   <!-- LOAD JAVASCRIPS AFTER PAGELOAD -->
   <script src="../../assets-shared/js/buttons.js"></script>
@@ -141,12 +168,10 @@
 
 <!-- INLINE STYLE -->
 <style>
+  /*
+  not used...
   ::-webkit-scrollbar {display: none;}
-
-
-
-
-
+  */
   :root {
     --bg: #21212b;
     --bg-card: #2f2f39;

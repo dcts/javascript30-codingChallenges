@@ -13,7 +13,7 @@
 .raido-cards {
 	margin: 10px auto;
   height: 100%;
-  margin-right:-50px;
+  margin-right:-60px; /* add 10 px back (see line 14) */
   padding-right: 50px;
   overflow-y: scroll;
 }
