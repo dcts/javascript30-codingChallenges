@@ -1,14 +1,15 @@
 .sticky-header {
-	position:absolute; 
-	height: 79px; 
-	top: 0; 
-	width: 100%; 
-	left: 0; 
+	position:absolute;
+	height: 79px;
+	top: 0;
+	width: 100%;
+	left: 0;
 	background-color: var(--orange);
 	color: var(--white);
 }
 .sticky-header > div {
 	height: 79px;
+  margin: 0 17px 0 11px;
 }
 #placeholder {
 	/*border: 2px solid yellow;*/
@@ -18,4 +19,10 @@
 #title {
   font-family: 'Cerebri Bold';
   font-size: 22px;
+}
+
+.bttn-back, .bttn-off {
+  /*border: 2px solid white;*/
+  /*font-size: 32px;*/
+  width: 28px;
 }
