@@ -24,21 +24,22 @@
     <div id="radio-player">
 
       <div class="sticky-header">
-        <div class="flex align-center justify-space-between">
+        <div class="flex justify-space-between align-center">
           <p class="bttn-back"></p>
           <h1 id="title">STATIONS</h1>
           <p class="bttn-off"></p>
         </div>
       </div>
+      <div id="placeholder"></div>
 
 
       <div id="raido-cards">
         <div class="radio-card">
-          <div class="flex justify-space-between">
+          <div class="card-top flex justify-space-between">
             <p class="radio-title">Putin FM</p>
             <p class="radio-fq">66,6</p>
           </div>
-          <div class="flex justify-space-between hidden">
+          <div class="card-extend flex justify-space-between hidden">
             <p class="minus">-</p>
             <img class="radio-avatar" src="">
             <p class="plus">+</p>
@@ -47,11 +48,11 @@
         <hr>
 
         <div class="radio-card">
-          <div class="flex justify-space-between">
+          <div class="card-top flex justify-space-between">
             <p class="radio-title">Dribble FM</p>
-            <p class="radio-fq">66,6</p>
+            <p class="radio-fq">101,2</p>
           </div>
-          <div class="flex justify-space-between hidden">
+          <div class="card-extend flex justify-space-between hidden">
             <p class="minus">-</p>
             <img class="radio-avatar" src="">
             <p class="plus">+</p>
@@ -60,11 +61,11 @@
         <hr>
 
         <div class="radio-card">
-          <div class="flex justify-space-between">
+          <div class="card-top flex justify-space-between">
             <p class="radio-title">Doge FM</p>
-            <p class="radio-fq">66,6</p>
+            <p class="radio-fq">99,4</p>
           </div>
-          <div class="flex justify-space-between hidden">
+          <div class="card-extend flex justify-space-between hidden">
             <p class="minus">-</p>
             <img class="radio-avatar" src="">
             <p class="plus">+</p>
@@ -73,11 +74,11 @@
         <hr>
 
         <div class="radio-card">
-          <div class="flex justify-space-between">
+          <div class="card-top flex justify-space-between">
             <p class="radio-title">Ballads FM</p>
-            <p class="radio-fq">66,6</p>
+            <p class="radio-fq">87,1</p>
           </div>
-          <div class="flex justify-space-between hidden">
+          <div class="card-extend flex justify-space-between hidden">
             <p class="minus">-</p>
             <img class="radio-avatar" src="">
             <p class="plus">+</p>
@@ -86,30 +87,33 @@
         <hr>
 
         <div class="radio-card">
-          <div class="flex justify-space-between">
+          <div class="card-top flex justify-space-between">
             <p class="radio-title">Maximum FM</p>
-            <p class="radio-fq">66,6</p>
+            <p class="radio-fq">142,2</p>
           </div>
-          <div class="flex justify-space-between hidden">
+          <div class="card-extend flex justify-space-between hidden">
             <p class="minus">-</p>
             <img class="radio-avatar" src="">
             <p class="plus">+</p>
           </div>  
         </div>
-        <hr>
 
+        <hr>
         <div class="radio-card">
-          <div class="flex justify-space-between">
+          <div class="card-top flex justify-space-between">
             <p class="radio-title">Bitcoin FM</p>
             <p class="radio-fq">66,6</p>
           </div>
-          <div class="flex justify-space-between hidden">
+          <div class="card-extend flex justify-space-between hidden">
             <p class="minus">-</p>
             <img class="radio-avatar" src="">
             <p class="plus">+</p>
           </div>  
         </div>
-        <hr>
+        <!--  ADDITIONAL CARD TO ADD OVERFLOW 
+
+        -->        
+
 
       </div>
       
@@ -153,10 +157,18 @@
   
   body {
     background-color: var(--bg);
-    color: var(--white);
+    color: white;
+    font-family: 'Cerebri Regular';
   }
-  h1 {
-    font-size: 22px;
+  hr {
+    margin: 0;
+    margin-left: 21px;
+    margin-right: 21px;
+    border: none;
+    height: 1px;
+    /* Set the hr color */
+    color: #3e404d; /* old IE */
+    background-color: #3e404d; /* Modern Browsers */
   }
   #radio-player {
     /*border: 1px solid red;*/
