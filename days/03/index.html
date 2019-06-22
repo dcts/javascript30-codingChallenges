@@ -28,10 +28,6 @@
       <p id="new-quote-bttn" class="bttn bttn-round">NEW QUOTE</p>
 
       <br>
-      <div class="controller-pair flex justify-space-between">
-        <label for="base">Base Color</label>
-        <input id="base" type="color" name="main-color" value="#7452ac">
-      </div>
 
       <div class="controller-pair flex justify-space-between">
         <label for="blur">Blur:</label>
@@ -63,6 +59,11 @@
         <input class="slider" id="invert" type="range" name="invert" min="0" max="100" value="0" data-sizing="%">
       </div>
 
+      <div class="controller-pair flex justify-space-between">
+        <label for="saturate">Saturate:</label>
+        <input class="slider" id="saturate" type="range" name="saturate" min="0" max="500" value="100" data-sizing="%">
+      </div>
+
       <br><br>
       <div class="flex justify-center">
         <a id="bttn-back" class="center block bttn bttn-round">BACK<a>
@@ -79,20 +80,13 @@
 <!-- INLINE STYLE -->
 <style>
   :root {
-    --main-color: rgb(116,82,172);
     --blur: 0px;
     --brightness: 100%;
     --contrast: 100%;
     --grayscale: 0%;
     --hue-rotate: 0deg;
     --invert: 0%;
-  }
-  .bttn {
-    background-color: var(--main-color);
-  }
-  .bttn:hover {
-    background-color: rgb(240,240,240);
-    color: rgb(15,15,15);
+    --saturate: 100%;
   }
   p, h1, .controller-pair {
     margin-left: 40px;
@@ -108,6 +102,7 @@
       grayscale(var(--grayscale))
       hue-rotate(var(--hue-rotate))
       invert(var(--invert))
+      saturate(var(--saturate));
   }
   .toggled {
     height: 100vh;
@@ -119,7 +114,7 @@
     min-width: 320px;
   }
   .hl {
-    color: var(--main-color);
+    color: slateblue;
   }
   input.slider {
     width: 180px;
