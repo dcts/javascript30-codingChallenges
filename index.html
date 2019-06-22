@@ -81,7 +81,7 @@
 <script>
   // ADD LINKS TO CARDS
   const rootUrl = document.location.href;
-  document.querySelectorAll('.grid-item').forEach((gridItem) => {
+  document.querySelectorAll('.grid-item.done').forEach((gridItem) => {
     gridItem.addEventListener("click", (e) => {
       window.location = `${rootUrl}days/${e.currentTarget.dataset.url}`
     });
