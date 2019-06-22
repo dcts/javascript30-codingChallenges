@@ -18,7 +18,7 @@
 
 <body>
   <h1 class="center ">Radio Player Challenge</h1>
-    
+
   <div class="flex justify-center">
 
     <div id="radio-player">
@@ -33,7 +33,9 @@
       <div id="placeholder"></div>
 
 
-      <div id="raido-cards">
+      <!-- BEGIN: Radio Cards -->
+      <div class="radio-cards-parent">
+      <div class="raido-cards">
         <div class="radio-card">
           <div class="card-top flex justify-space-between">
             <p class="radio-title">Putin FM</p>
@@ -43,7 +45,7 @@
             <p class="minus">-</p>
             <img class="radio-avatar" src="">
             <p class="plus">+</p>
-          </div>  
+          </div>
         </div>
         <hr>
 
@@ -56,7 +58,7 @@
             <p class="minus">-</p>
             <img class="radio-avatar" src="">
             <p class="plus">+</p>
-          </div>  
+          </div>
         </div>
         <hr>
 
@@ -69,7 +71,7 @@
             <p class="minus">-</p>
             <img class="radio-avatar" src="">
             <p class="plus">+</p>
-          </div>  
+          </div>
         </div>
         <hr>
 
@@ -82,7 +84,7 @@
             <p class="minus">-</p>
             <img class="radio-avatar" src="">
             <p class="plus">+</p>
-          </div>  
+          </div>
         </div>
         <hr>
 
@@ -95,7 +97,7 @@
             <p class="minus">-</p>
             <img class="radio-avatar" src="">
             <p class="plus">+</p>
-          </div>  
+          </div>
         </div>
 
         <hr>
@@ -108,22 +110,22 @@
             <p class="minus">-</p>
             <img class="radio-avatar" src="">
             <p class="plus">+</p>
-          </div>  
+          </div>
         </div>
-        <!--  ADDITIONAL CARD TO ADD OVERFLOW 
+        <!--  ADDITIONAL CARD TO ADD OVERFLOW
 
-        -->        
-
-
+        -->
+      <!-- END: Radio Cards -->
       </div>
-      
+      </div>
+
       <div class="sticky-footer"></div>
 
     </div>
-      
+
     <img src="task.png" alt="">
-    
-  </div>    
+
+  </div>
 
   <div class="flex justify-center">
     <a id="bttn-back" class="center block bttn bttn-round">BACK<a>
@@ -142,7 +144,7 @@
   ::-webkit-scrollbar {display: none;}
 
 
-  
+
 
 
   :root {
@@ -154,7 +156,7 @@
     --white-blue: #a3a7be;
     --line: #606571;
   }
-  
+
   body {
     background-color: var(--bg);
     color: white;

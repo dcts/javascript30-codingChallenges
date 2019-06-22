@@ -1,10 +1,21 @@
 .hidden {
 	display: none;
 }
-#raido-cards {
-	overflow: auto; 
-	height: 339px; 
-	margin: 10px auto; 
+/* HACK TO MAKE SCROLLBAR DISAPEAR */
+/* found here: https://stackoverflow.com/a/49278385/6272061 */
+/* js fiddle:  https://jsfiddle.net/rbyo0Lnm/ */
+/* @TODO: check other solution (same post has another solution on top) */
+.radio-cards-parent {
+	height: 339px;
+  width: 100%;
+	overflow: hidden;
+}
+.raido-cards {
+	margin: 10px auto;
+  height: 100%;
+  margin-right:-50px;
+  padding-right: 50px;
+  overflow-y: scroll;
 }
 .radio-card {
 	margin-left: 21px;
