@@ -1,0 +1,21 @@
+.sticky-header {
+	position:absolute; 
+	height: 79px; 
+	top: 0; 
+	width: 100%; 
+	left: 0; 
+	background-color: var(--orange);
+	color: var(--white);
+}
+.sticky-header > div {
+	height: 79px;
+}
+#placeholder {
+	/*border: 2px solid yellow;*/
+	width: 100%;
+	height: 79px;
+}
+#title {
+  font-family: 'Cerebri Bold';
+  font-size: 22px;
+}

@@ -1,0 +1,10 @@
+.sticky-footer {
+	background-color: var(--bg-card-dark);
+  position:absolute; 
+	height: 79px; 
+  bottom: 0; 
+  width:100%; 
+  left:0; 
+  border-top: 2px solid #464650;
+}
+

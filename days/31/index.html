@@ -11,26 +11,177 @@
   <link rel="stylesheet" href="../../assets-shared/css/basics.css">
   <link rel="stylesheet" href="../../assets-shared/css/buttons.css">
   <link rel="stylesheet" href="../../assets-shared/css/fonts.css">
+  <link rel="stylesheet" href="css/radio-cards.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/header.css">
 </head>
 
 <body>
-  <div class="container">
-    <!-- TODO HERE -->
-    <h1 class="center ">Radio Player Challenge</h1>
+  <h1 class="center ">Radio Player Challenge</h1>
+    
+  <div class="flex justify-center">
 
-    <div class="flex justify-center">
-      <a id="bttn-back" class="center block bttn bttn-round">BACK<a>
+    <div id="radio-player">
+
+      <div class="sticky-header">
+        <div class="flex justify-space-between align-center">
+          <p class="bttn-back"></p>
+          <h1 id="title">STATIONS</h1>
+          <p class="bttn-off"></p>
+        </div>
+      </div>
+      <div id="placeholder"></div>
+
+
+      <div id="raido-cards">
+        <div class="radio-card">
+          <div class="card-top flex justify-space-between">
+            <p class="radio-title">Putin FM</p>
+            <p class="radio-fq">66,6</p>
+          </div>
+          <div class="card-extend flex justify-space-between hidden">
+            <p class="minus">-</p>
+            <img class="radio-avatar" src="">
+            <p class="plus">+</p>
+          </div>  
+        </div>
+        <hr>
+
+        <div class="radio-card">
+          <div class="card-top flex justify-space-between">
+            <p class="radio-title">Dribble FM</p>
+            <p class="radio-fq">101,2</p>
+          </div>
+          <div class="card-extend flex justify-space-between hidden">
+            <p class="minus">-</p>
+            <img class="radio-avatar" src="">
+            <p class="plus">+</p>
+          </div>  
+        </div>
+        <hr>
+
+        <div class="radio-card">
+          <div class="card-top flex justify-space-between">
+            <p class="radio-title">Doge FM</p>
+            <p class="radio-fq">99,4</p>
+          </div>
+          <div class="card-extend flex justify-space-between hidden">
+            <p class="minus">-</p>
+            <img class="radio-avatar" src="">
+            <p class="plus">+</p>
+          </div>  
+        </div>
+        <hr>
+
+        <div class="radio-card">
+          <div class="card-top flex justify-space-between">
+            <p class="radio-title">Ballads FM</p>
+            <p class="radio-fq">87,1</p>
+          </div>
+          <div class="card-extend flex justify-space-between hidden">
+            <p class="minus">-</p>
+            <img class="radio-avatar" src="">
+            <p class="plus">+</p>
+          </div>  
+        </div>
+        <hr>
+
+        <div class="radio-card">
+          <div class="card-top flex justify-space-between">
+            <p class="radio-title">Maximum FM</p>
+            <p class="radio-fq">142,2</p>
+          </div>
+          <div class="card-extend flex justify-space-between hidden">
+            <p class="minus">-</p>
+            <img class="radio-avatar" src="">
+            <p class="plus">+</p>
+          </div>  
+        </div>
+
+        <hr>
+        <div class="radio-card">
+          <div class="card-top flex justify-space-between">
+            <p class="radio-title">Bitcoin FM</p>
+            <p class="radio-fq">66,6</p>
+          </div>
+          <div class="card-extend flex justify-space-between hidden">
+            <p class="minus">-</p>
+            <img class="radio-avatar" src="">
+            <p class="plus">+</p>
+          </div>  
+        </div>
+        <!--  ADDITIONAL CARD TO ADD OVERFLOW 
+
+        -->        
+
+
+      </div>
+      
+      <div class="sticky-footer"></div>
+
     </div>
+      
+    <img src="task.png" alt="">
+    
+  </div>    
+
+  <div class="flex justify-center">
+    <a id="bttn-back" class="center block bttn bttn-round">BACK<a>
   </div>
+
 
   <!-- LOAD JAVASCRIPS AFTER PAGELOAD -->
   <script src="../../assets-shared/js/buttons.js"></script>
+  <script src="js/cardsLogic.js"></script>
+  <script src="js/tecleadRadiosApiCall.js"></script>
 </body>
 </html>
 
 <!-- INLINE STYLE -->
 <style>
+  ::-webkit-scrollbar {display: none;}
 
+
+  
+
+
+  :root {
+    --bg: #21212b;
+    --bg-card: #2f2f39;
+    --bg-card-dark: #22222a;
+    --orange: #edae61;
+    --white: #f6faf6;
+    --white-blue: #a3a7be;
+    --line: #606571;
+  }
+  
+  body {
+    background-color: var(--bg);
+    color: white;
+    font-family: 'Cerebri Regular';
+  }
+  hr {
+    margin: 0;
+    margin-left: 21px;
+    margin-right: 21px;
+    border: none;
+    height: 1px;
+    /* Set the hr color */
+    color: #3e404d; /* old IE */
+    background-color: #3e404d; /* Modern Browsers */
+  }
+  #radio-player {
+    /*border: 1px solid red;*/
+    position: relative;
+    margin: 42px 22px;
+    width: 315px;
+    background-color: var(--bg-card);
+    display: inline-block;
+    border-radius: 23px;
+    overflow: hidden;
+    box-shadow: 0 0 10px black;
+    box-shadow: 0 4px 108px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
 </style>
 
 <!-- INLINE SCRIPT -->

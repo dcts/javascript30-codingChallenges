@@ -1,0 +1,28 @@
+.hidden {
+	display: none;
+}
+#raido-cards {
+	overflow: auto; 
+	height: 339px; 
+	margin: 10px auto; 
+}
+.radio-card {
+	margin-left: 21px;
+	margin-right: 21px;
+}
+.radio-card p {
+	font-size: 22px;
+	margin: 0;
+	color: var(--white-blue);
+}
+.card-top {
+	height: 59px;
+  align-items: center;
+}
+
+.radio-title {
+  font-family: 'Cerebri Book';
+}
+.radio-fq {
+  font-family: 'Cerebri Bold';
+}
