@@ -70,6 +70,6 @@ img.radio-avatar {
   height: 141px;
   border-radius: 50%;
   border: 2.4px solid var(--white-blue);
-  filter: grayscale(100%);
+  /*filter: sepia(100%) grayscale(20%);*/ /* optional add effect layer on image */
 }
 

@@ -36,6 +36,12 @@ bttnPower.addEventListener("click", () => {
   selectedRadio.classList.toggle("transparent");
 });
 
+// remove last horizontal ruler
+const removeLastRuler = () => {
+  const lastRuler = document.querySelector("hr:last-child");
+  lastRuler.parentElement.removeChild(lastRuler);
+}
+
 // RADIO CARDS CLICK LOGIC
 const applyCardListeners = () => {
   const cards = document.querySelectorAll(".radio-card");
@@ -78,6 +84,7 @@ const applyCardListeners = () => {
 //   data.radios.forEach((radio) => {
 //     injectCard(buildCard(radio));
 //   });
+//   removeLastRuler();
 //   applyCardListeners();
 // })
 
@@ -90,6 +97,7 @@ let request = new XMLHttpRequest();
 request.onload = function() {
   data = JSON.parse(this.responseText);
   data.radios.forEach(radio => injectCard(buildCard(radio)));
+  removeLastRuler();
   applyCardListeners();
 };
 request.open("get", "radio-data.json", true);
