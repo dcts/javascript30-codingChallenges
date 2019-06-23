@@ -30,18 +30,15 @@
 	height: 59px;
   align-items: center;
 }
-
 .radio-title {
   font-family: 'Cerebri Book';
-}
-.radio-title:hover {
-  font-family: 'Cerebri Book';
-  color: white;
 }
 .radio-fq {
   font-family: 'Cerebri Bold';
 }
-
+.card-top:hover .card-text {
+  color: white;
+}
 .card-extend {
   /*border: 3px solid red;*/
   height: 164px;
