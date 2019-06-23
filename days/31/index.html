@@ -12,9 +12,11 @@
   <link rel="stylesheet" href="../../assets-shared/css/basics.css">
   <link rel="stylesheet" href="../../assets-shared/css/buttons.css">
   <link rel="stylesheet" href="../../assets-shared/css/fonts.css">
+  <link rel="stylesheet" href="css/radio-player.css">
   <link rel="stylesheet" href="css/radio-cards.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/basics.css">  <!-- order matters! this must be the last file imported! -->
 </head>
 
 <body>
@@ -29,7 +31,7 @@
       <div class="sticky-header">
         <div class="flex justify-space-between align-center">
           <!-- <p class="bttn-back"><i class="fa fa-chevron-left"></i></p> -->
-          <img id="bttn-arrow" src="img/back-2.svg">
+          <img id="bttn-arrow" src="img/back.svg">
           <h1 id="title">STATIONS</h1>
           <img id="bttn-power" src="img/power.svg">
           <!-- <img src="https://img.icons8.com/ios-glyphs/30/000000/shutdown.png"> -->
@@ -45,99 +47,7 @@
         <!-- BEGIN: Radio Cards -->
         <div class="raido-cards">
 
-          <!-- BEGIN: Radio Card -->
-          <div class="radio-card">
-            <div class="card-top flex justify-space-between">
-              <p class="radio-title card-text">Putin FM</p>
-              <p class="radio-fq card-text">66,6</p>
-            </div>
-            <div class="card-extend flex justify-space-between hidden">
-              <img class="minus" src="img/minus.svg">
-              <img class="radio-avatar" src="https://dummyimage.com/400x400/3d43ff/ffffff&text=RadioOne">
-              <img class="plus" src="img/plus.svg">
-            </div>
-          </div>
-          <!-- END: Radio Card -->
 
-          <hr>
-
-          <!-- BEGIN: Radio Card -->
-          <div class="radio-card">
-            <div class="card-top flex justify-space-between">
-              <p class="radio-title card-text">Dribble FM</p>
-              <p class="radio-fq card-text">101,2</p>
-            </div>
-            <div class="card-extend flex justify-space-between hidden">
-              <img class="minus" src="img/minus.svg">
-              <img class="radio-avatar" src="https://dummyimage.com/400x400/3d43ff/ffffff&text=RadioOne">
-              <img class="plus" src="img/plus.svg">
-            </div>
-          </div>
-          <!-- END: Radio Card -->
-
-          <hr>
-
-          <!-- BEGIN: Radio Card -->
-          <div class="radio-card">
-            <div class="card-top flex justify-space-between">
-              <p class="radio-title card-text">Doge FM</p>
-              <p class="radio-fq card-text">99,4</p>
-            </div>
-            <div class="card-extend flex justify-space-between hidden">
-              <img class="minus" src="img/minus.svg">
-              <img class="radio-avatar" src="https://dummyimage.com/400x400/3d43ff/ffffff&text=RadioOne">
-              <img class="plus" src="img/plus.svg">
-            </div>
-          </div>
-          <!-- END: Radio Card -->
-
-          <hr>
-
-          <!-- BEGIN: Radio Card -->
-          <div class="radio-card">
-            <div class="card-top flex justify-space-between">
-              <p class="radio-title card-text">Ballads FM</p>
-              <p class="radio-fq card-text">87,1</p>
-            </div>
-            <div class="card-extend flex justify-space-between hidden">
-              <img class="minus" src="img/minus.svg">
-              <img class="radio-avatar" src="https://dummyimage.com/400x400/3d43ff/ffffff&text=RadioOne">
-              <img class="plus" src="img/plus.svg">
-            </div>
-          </div>
-          <!-- END: Radio Card -->
-
-          <hr>
-
-          <!-- BEGIN: Radio Card -->
-          <div class="radio-card">
-            <div class="card-top flex justify-space-between">
-              <p class="radio-title card-text">Maximum FM</p>
-              <p class="radio-fq card-text">142,2</p>
-            </div>
-            <div class="card-extend flex justify-space-between hidden">
-              <img class="minus" src="img/minus.svg">
-              <img class="radio-avatar" src="https://dummyimage.com/400x400/3d43ff/ffffff&text=RadioOne">
-              <img class="plus" src="img/plus.svg">
-            </div>
-          </div>
-          <!-- END: Radio Card -->
-
-          <hr>
-
-          <!-- BEGIN: Radio Card -->
-          <div class="radio-card">
-            <div class="card-top flex justify-space-between">
-              <p class="radio-title card-text">Bitcoin FM</p>
-              <p class="radio-fq card-text">66,6</p>
-            </div>
-            <div class="card-extend flex justify-space-between hidden">
-              <img class="minus" src="img/minus.svg">
-              <img class="radio-avatar" src="https://dummyimage.com/400x400/3d43ff/ffffff&text=RadioOne">
-              <img class="plus" src="img/plus.svg">
-            </div>
-          </div>
-          <!-- END: Radio Card -->
 
         </div>
         <!-- END: Radio Cards -->
@@ -173,108 +83,3 @@
 </body>
 </html>
 
-<!-- INLINE STYLE -->
-<style>
-  /*
-  not used...
-  ::-webkit-scrollbar {display: none;}
-  */
-  :root {
-    --bg: #21212b;
-    --bg-card: #2f2f39;
-    --bg-card-dark: #22222a;
-    --orange: #edae61;
-    --white: #f6faf6;
-    --white-blue: #a3a7be;
-    --line: #606571;
-  }
-
-  body {
-    background-color: var(--bg);
-    color: white;
-    font-family: 'Cerebri Regular';
-  }
-  hr {
-    margin: 0;
-    margin-left: 21px;
-    margin-right: 21px;
-    border: none;
-    height: 1px;
-    /* Set the hr color */
-    color: #3e404d; /* old IE */
-    background-color: #3e404d; /* Modern Browsers */
-  }
-  #radio-player {
-    /*border: 1px solid red;*/
-    position: relative;
-    margin: 42px 22px;
-    width: 315px;
-    height: 500px;
-    background-color: var(--bg-card);
-    display: inline-block;
-    border-radius: 23px;
-    overflow: hidden;
-    box-shadow: 0 0 10px black;
-    box-shadow: 0 4px 108px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    transition: all 1s ease;
-  }
-  .closed {
-    height: 160px !important;
-    transform: rotate(360deg);
-    transition: all 1s ease;
-  }
-  .transparent {
-    opacity: 0;
-    transition: all 1s ease;
-  }
-  .white {
-    color: white !important;
-  }
-  .hidden {
-    opacity: 0;
-    transition: all 0.5s ease;
-  }
-</style>
-
-<!-- INLINE SCRIPT -->
-<script>
-  const bttnPower = document.getElementById("bttn-power");
-  const radioPlayer = document.getElementById("radio-player");
-  const title = document.getElementById("title");
-
-  const currentlyPlayingLabel = document.querySelector(".currently-playing-label");
-  const selectedRadio = document.querySelector(".selected-radio");
-
-  bttnPower.addEventListener("click", () => {
-    radioPlayer.classList.toggle("closed");
-    currentlyPlayingLabel.classList.toggle("transparent");
-    selectedRadio.classList.toggle("transparent");
-  });
-
-  const closeAllCards = () => {
-    const cardExtensions = document.querySelectorAll(".card-extend");
-    cardExtensions.forEach((cardExtension) => {
-      cardExtension.classList.add("hidden")
-    });
-  }
-
-  const cards = document.querySelectorAll(".radio-card");
-
-  cards.forEach((card) => {
-    card.children[0].addEventListener("click", (e) => {
-      // RADIO IS ALREADY SELECTED (-> close the window)
-      if (e.currentTarget.innerText.split("\n")[0] === selectedRadio.innerText) {
-        currentlyPlayingLabel.classList.add("hidden")
-        selectedRadio.classList.add("hidden")
-        selectedRadio.innerText = "";
-      // ANOTHER RADIO OR NO RADIO SELECTED
-      } else {
-        currentlyPlayingLabel.classList.remove("hidden")
-        selectedRadio.classList.remove("hidden")
-        closeAllCards();
-        selectedRadio.innerText = card.children[0].children[0].innerText;
-      }
-      card.children[1].classList.toggle("hidden");
-    })
-  });
-</script>

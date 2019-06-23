@@ -1,0 +1,36 @@
+.transparent {
+  opacity: 0;
+  transition: all 1s ease;
+}
+.white {
+  color: white !important;
+}
+.hidden {
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+:root {
+--bg: #21212b;
+--bg-card: #2f2f39;
+--bg-card-dark: #22222a;
+--orange: #edae61;
+--white: #f6faf6;
+--white-blue: #a3a7be;
+--line: #606571;
+}
+body {
+  background-color: var(--bg);
+  color: white;
+  font-family: 'Cerebri Regular';
+}
+hr {
+  margin: 0;
+  margin-left: 21px;
+  margin-right: 21px;
+  border: none;
+  height: 1px;
+  /* Set the hr color */
+  color: #3e404d; /* old IE */
+  background-color: #3e404d; /* Modern Browsers */
+}
+

@@ -1,0 +1,18 @@
+#radio-player {
+  position: relative;
+  margin: 42px 22px;
+  width: 315px;
+  height: 500px;
+  background-color: var(--bg-card);
+  display: inline-block;
+  border-radius: 23px;
+  overflow: hidden;
+  box-shadow: 0 0 10px black;
+  box-shadow: 0 4px 108px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: all 1s ease;
+}
+.closed {
+  height: 160px !important;
+  transform: rotate(360deg);
+  transition: all 1s ease;
+}
