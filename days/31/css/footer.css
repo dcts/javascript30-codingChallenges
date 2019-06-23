@@ -10,6 +10,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 1; /* needed to overlay "card-text" class! */
 }
 /* FOR TRANSITION EFFECT -> opacity needs to be defined! */
 .currently-playing-label, .selected-radio {
