@@ -1,6 +1,4 @@
-.hidden {
-	display: none;
-}
+
 /* HACK TO MAKE SCROLLBAR DISAPEAR */
 /* found here: https://stackoverflow.com/a/49278385/6272061 */
 /* js fiddle:  https://jsfiddle.net/rbyo0Lnm/ */
@@ -38,9 +36,11 @@
 }
 .radio-title {
   font-family: 'Cerebri Book';
+  z-index: 1;
 }
 .radio-fq {
   font-family: 'Cerebri Bold';
+  z-index: 1;
 }
 .card-top:hover .card-text {
   color: white;
@@ -48,6 +48,12 @@
 .card-extend {
   /*border: 3px solid red;*/
   height: 164px;
+  transition: height 0.4s ease, opacity 0.25s linear 0.25s;
+}
+.card-extend.hidden {
+  opacity: 0;
+  height: 0px;
+  transition: height 0.4s ease 0.25s, opacity 0.25s linear;
 }
 img.minus , img.plus {
   width: 27px;
