@@ -1,5 +1,5 @@
 // say hi
-console.log("TRIGGERED: tecleadRadiosApiCall.js");
+console.log("TRIGGERED: index.js");
 
 // load DOM elements
 const radioCards = document.querySelector(".raido-cards");
@@ -25,11 +25,11 @@ const buildCard = (radio) => {
     <hr>
   `
 };
-
 const injectCard = (radioCard) => {
   radioCards.innerHTML += (radioCard);
 };
 
+// POWER OFF clickevent (close player and flip by 360deg)
 bttnPower.addEventListener("click", () => {
   radioPlayer.classList.toggle("closed");
   currentlyPlayingLabel.classList.toggle("transparent");
@@ -50,8 +50,6 @@ const applyCardListeners = () => {
   cards.forEach((card) => {
     card.children[0].addEventListener("click", (e) => {
       // radio is already selected -> close clicked radio
-      console.log(e);
-      console.log(e.currentTarget.innerText.split("\n")[0] === selectedRadio.innerText);
       if (e.currentTarget.innerText.split("\n")[0] === selectedRadio.innerText) {
         currentlyPlayingLabel.classList.add("hidden")
         selectedRadio.classList.add("hidden")

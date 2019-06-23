@@ -4,11 +4,9 @@
   <meta charset="UTF-8">
   <meta name="description" content="Custom Coding Challenge - Radio Web Player (Frontend)">
   <title>Radio Player Challenge</title>
-
   <!-- FONTAWESOME -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  <!-- LINK STYLESHEETS -->
+  <!-- IMPORT STYLESHEETS -->
   <link rel="stylesheet" href="../../assets-shared/css/basics.css">
   <link rel="stylesheet" href="../../assets-shared/css/buttons.css">
   <link rel="stylesheet" href="../../assets-shared/css/fonts.css">
@@ -24,18 +22,16 @@
 
   <!-- BEGIN: Flexbox with 2 items: my Solution (.radio-player) and design template (as img)  -->
   <div class="flex justify-center">
+
     <!-- BEGIN: Radio Player -->
     <div id="radio-player">
 
       <!-- BEGIN: Header -->
       <div class="sticky-header">
         <div class="flex justify-space-between align-center">
-          <!-- <p class="bttn-back"><i class="fa fa-chevron-left"></i></p> -->
           <img id="bttn-arrow" src="img/back.svg">
           <h1 id="title">STATIONS</h1>
           <img id="bttn-power" src="img/power.svg">
-          <!-- <img src="https://img.icons8.com/ios-glyphs/30/000000/shutdown.png"> -->
-          <!-- <p class="bttn-off"><i class="fa fa-power-off"></i></p> -->
         </div>
       </div>
       <!-- PLACEHOLDER TO PUSH CONTET DOWN (same size as header!) -->
@@ -44,13 +40,9 @@
 
       <!-- BEGIN: Radio Cards Parent -->
       <div class="radio-cards-parent">
-        <!-- BEGIN: Radio Cards -->
         <div class="raido-cards">
-
-
-
+          <!-- CARDS WILL BE ADDED WITH JS -->
         </div>
-        <!-- END: Radio Cards -->
       </div>
       <!-- END: Radio Cards Parent -->
 
@@ -78,8 +70,7 @@
 
   <!-- LOAD JAVASCRIPS AFTER PAGELOAD -->
   <script src="../../assets-shared/js/buttons.js"></script>
-  <script src="js/cardsLogic.js"></script>
-  <script src="js/tecleadRadiosApiCall.js"></script>
+  <script src="js/index.js"></script>
 </body>
 </html>
 
