@@ -21,6 +21,12 @@
 	margin-left: 21px;
 	margin-right: 21px;
 }
+.radio-card:nth-child(1) {
+  margin-top: 10px;
+}
+.radio-card:last-child {
+  margin-bottom: 30px;
+}
 .radio-card p {
 	font-size: 22px;
 	margin: 0;
