@@ -8,12 +8,7 @@ const radioPlayer = document.getElementById("radio-player");
 const title = document.getElementById("title");
 const currentlyPlayingLabel = document.querySelector(".currently-playing-label");
 const selectedRadio = document.querySelector(".selected-radio");
-const cardExtensions = document.querySelectorAll(".card-extend");
 
-const injectCard = (radioCard) => {
-  // radioCards
-  radioCards.innerHTML += (radioCard);
-};
 const buildCard = (radio) => {
   return `
     <div class="radio-card">
@@ -31,14 +26,20 @@ const buildCard = (radio) => {
   `
 };
 
-const applyListeners = () => {
-  const cards = document.querySelectorAll(".radio-card");
+const injectCard = (radioCard) => {
+  radioCards.innerHTML += (radioCard);
+};
 
-  bttnPower.addEventListener("click", () => {
-    radioPlayer.classList.toggle("closed");
-    currentlyPlayingLabel.classList.toggle("transparent");
-    selectedRadio.classList.toggle("transparent");
-  });
+bttnPower.addEventListener("click", () => {
+  radioPlayer.classList.toggle("closed");
+  currentlyPlayingLabel.classList.toggle("transparent");
+  selectedRadio.classList.toggle("transparent");
+});
+
+// RADIO CARDS CLICK LOGIC
+const applyCardListeners = () => {
+  const cards = document.querySelectorAll(".radio-card");
+  const cardExtensions = document.querySelectorAll(".card-extend");
 
   const closeAllCards = () => {
     cardExtensions.forEach((cardExtension) => {
@@ -48,37 +49,32 @@ const applyListeners = () => {
 
   cards.forEach((card) => {
     card.children[0].addEventListener("click", (e) => {
-      // RADIO IS ALREADY SELECTED (-> close the window)
+      // radio is already selected -> close clicked radio
+      console.log(e);
+      console.log(e.currentTarget.innerText.split("\n")[0] === selectedRadio.innerText);
       if (e.currentTarget.innerText.split("\n")[0] === selectedRadio.innerText) {
         currentlyPlayingLabel.classList.add("hidden")
         selectedRadio.classList.add("hidden")
         selectedRadio.innerText = "";
-      // ANOTHER RADIO OR NO RADIO SELECTED
+      // another radio or no radio selected -> open clicked radio
       } else {
         currentlyPlayingLabel.classList.remove("hidden")
         selectedRadio.classList.remove("hidden")
-        closeAllCards();
         selectedRadio.innerText = card.children[0].children[0].innerText;
+        closeAllCards();
       }
       card.children[1].classList.toggle("hidden");
     })
   });
 }
 
-// fetch Data
+// START SCRIPT HERE!
+// fetch Data from API
 fetch("https://teclead.de/recruiting/radios")
 .then(resp => resp.json())
 .then(data => {
   data.radios.forEach((radio) => {
     injectCard(buildCard(radio));
   });
-  applyListeners();
+  applyCardListeners();
 })
-
-
-
-// create new DOM elements
-
-
-// insert into Page
-
