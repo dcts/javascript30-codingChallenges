@@ -2,10 +2,16 @@
 console.log("TRIGGERED: tecleadRadiosApiCall.js");
 
 // load DOM elements
+const radioCards = document.querySelector(".raido-cards");
+const bttnPower = document.getElementById("bttn-power");
+const radioPlayer = document.getElementById("radio-player");
+const title = document.getElementById("title");
+const currentlyPlayingLabel = document.querySelector(".currently-playing-label");
+const selectedRadio = document.querySelector(".selected-radio");
+const cardExtensions = document.querySelectorAll(".card-extend");
 
 const injectCard = (radioCard) => {
   // radioCards
-  const radioCards = document.querySelector(".raido-cards");
   radioCards.innerHTML += (radioCard);
 };
 const buildCard = (radio) => {
@@ -26,12 +32,7 @@ const buildCard = (radio) => {
 };
 
 const applyListeners = () => {
-  const bttnPower = document.getElementById("bttn-power");
-  const radioPlayer = document.getElementById("radio-player");
-  const title = document.getElementById("title");
-
-  const currentlyPlayingLabel = document.querySelector(".currently-playing-label");
-  const selectedRadio = document.querySelector(".selected-radio");
+  const cards = document.querySelectorAll(".radio-card");
 
   bttnPower.addEventListener("click", () => {
     radioPlayer.classList.toggle("closed");
@@ -40,13 +41,10 @@ const applyListeners = () => {
   });
 
   const closeAllCards = () => {
-    const cardExtensions = document.querySelectorAll(".card-extend");
     cardExtensions.forEach((cardExtension) => {
       cardExtension.classList.add("hidden")
     });
   }
-
-  const cards = document.querySelectorAll(".radio-card");
 
   cards.forEach((card) => {
     card.children[0].addEventListener("click", (e) => {
