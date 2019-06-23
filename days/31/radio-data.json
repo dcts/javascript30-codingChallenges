@@ -1,24 +1,29 @@
 {
   "radios": [
     {
-      "name": "Radio 1",
-      "frequency": 99.23,
+      "name": "Putin FM",
+      "frequency": "66,6",
+      "image": "https://i.giphy.com/media/Pr8tx4ZWLjthm/giphy.webp"
+    },
+    {
+      "name": "Dribbble FM",
+      "frequency": "101,2",
       "image": "https://dummyimage.com/400x400/3d43ff/ffffff&text=RadioOne"
     },
     {
-      "name": "Radio 2",
-      "frequency": 88.13,
-      "image": "https://dummyimage.com/400x400/3d43ff/ffffff&text=RadioOne"
+      "name": "Doge FM",
+      "frequency": "99,4",
+      "image": "https://banner2.kisspng.com/20180810/tz/kisspng-shiba-inu-dogecoin-clip-art-scalable-vector-graphi-doge-pixel-www-pixshark-com-images-galleries-wit-5b6d30af29d5d9.5368936015338825431714.jpg"
     },
     {
-      "name": "Radio 3",
-      "frequency": 89.99,
-      "image": "https://dummyimage.com/400x400/3d43ff/ffffff&text=RadioOne"
+      "name": "Ballads FM",
+      "frequency": "87,1",
+      "image": "https://i.giphy.com/media/Imwgu303QscSY/giphy.webp"
     },
     {
-      "name": "Radio 4",
-      "frequency": 93.23,
-      "image": "https://dummyimage.com/400x400/3d43ff/ffffff&text=RadioOne"
+      "name": "Teclead FM",
+      "frequency": "1000,0",
+      "image": "https://user-images.githubusercontent.com/44790691/59971494-50c43f80-957d-11e9-81bf-9a4ddea185e4.jpg"
     }
   ]
 }

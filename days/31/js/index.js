@@ -67,12 +67,30 @@ const applyCardListeners = () => {
 }
 
 // START SCRIPT HERE!
-// fetch Data from API
-fetch("https://teclead.de/recruiting/radios")
-.then(resp => resp.json())
-.then(data => {
-  data.radios.forEach((radio) => {
-    injectCard(buildCard(radio));
-  });
+
+/* FETCH DATA FROM TECLEAD API
+ * works..!
+ */
+// fetch Data from TECLEAD API
+// fetch("https://teclead.de/recruiting/radios")
+// .then(resp => resp.json())
+// .then(data => {
+//   data.radios.forEach((radio) => {
+//     injectCard(buildCard(radio));
+//   });
+//   applyCardListeners();
+// })
+
+/* CUSTOM DUMMY DATA FROM LOCAL JSON FILE
+ * If you want you can comment this section out and comment the section abobe
+ * back in to use the teclead API as data resource.
+ */
+let data;
+let request = new XMLHttpRequest();
+request.onload = function() {
+  data = JSON.parse(this.responseText);
+  data.radios.forEach(radio => injectCard(buildCard(radio)));
   applyCardListeners();
-})
+};
+request.open("get", "radio-data.json", true);
+request.send();
