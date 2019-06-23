@@ -146,8 +146,8 @@
 
       <!-- BEGIN: Footer -->
       <div class="sticky-footer">
-        <p class="currently-playing-label">CURRENTLY PLAYING</p>
-        <p class="selected-radio">Dribbble FM</p>
+        <p class="currently-playing-label hidden">CURRENTLY PLAYING</p>
+        <p class="selected-radio hidden">none</p>
       </div>
       <!-- END: Footer -->
 
@@ -230,6 +230,10 @@
   .white {
     color: white !important;
   }
+  .hidden {
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
 </style>
 
 <!-- INLINE SCRIPT -->
@@ -255,15 +259,22 @@
   }
 
   const cards = document.querySelectorAll(".radio-card");
-  // console.log(cards);
 
   cards.forEach((card) => {
     card.children[0].addEventListener("click", (e) => {
-      // closeAllCards();
-      // card.children[0].children[0].classList.toggle("white");
-      // card.children[0].children[1].classList.toggle("white");
+      // RADIO IS ALREADY SELECTED (-> close the window)
+      if (e.currentTarget.innerText.split("\n")[0] === selectedRadio.innerText) {
+        currentlyPlayingLabel.classList.add("hidden")
+        selectedRadio.classList.add("hidden")
+        selectedRadio.innerText = "";
+      // ANOTHER RADIO OR NO RADIO SELECTED
+      } else {
+        currentlyPlayingLabel.classList.remove("hidden")
+        selectedRadio.classList.remove("hidden")
+        closeAllCards();
+        selectedRadio.innerText = card.children[0].children[0].innerText;
+      }
       card.children[1].classList.toggle("hidden");
-      selectedRadio.innerText = card.children[0].children[0].innerText;
     })
   });
 </script>

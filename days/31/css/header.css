@@ -25,6 +25,4 @@
   transition: transform 1s ease;
 }#bttn-arrow:hover, #bttn-power:hover {
   transform: rotate(360deg);
-  /*width: 32px;
-  margin-left: -4px;*/
 }

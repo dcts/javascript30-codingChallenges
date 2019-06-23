@@ -14,7 +14,7 @@
 /* FOR TRANSITION EFFECT -> opacity needs to be defined! */
 .currently-playing-label, .selected-radio {
   opacity: 1;
-  transition: all 3s ease;
+  transition: all 0.5s ease;
 }
 .currently-playing-label {
   margin: 0;
