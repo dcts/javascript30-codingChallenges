@@ -5,10 +5,7 @@ console.log("TRIGGERED: tecleadRadiosApiCall.js");
 
 const injectCard = (radioCard) => {
   // radioCards
-  console.log(radioCard);
   const radioCards = document.querySelector(".raido-cards");
-  console.log(radioCards);
-  console.log(typeof(radioCards));
   radioCards.innerHTML += (radioCard);
 };
 const buildCard = (radio) => {
@@ -74,7 +71,6 @@ const applyListeners = () => {
 fetch("https://teclead.de/recruiting/radios")
 .then(resp => resp.json())
 .then(data => {
-  const radioCards = [];
   data.radios.forEach((radio) => {
     injectCard(buildCard(radio));
   });
