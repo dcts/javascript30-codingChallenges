@@ -11,7 +11,7 @@
 	overflow: hidden;
 }
 .raido-cards {
-	margin: 10px auto;
+	margin: 0 auto;
   height: 100%;
   margin-right:-60px; /* add 10 px back (see line 14) */
   padding-right: 50px;
@@ -37,3 +37,17 @@
 .radio-fq {
   font-family: 'Cerebri Bold';
 }
+
+.card-extend {
+  /*border: 3px solid red;*/
+  height: 164px;}
+img.minus , img.plus {
+  width: 27px;
+}
+img.radio-avatar {
+  width: 141px;
+  height: 141px;
+  border-radius: 50%;
+  border: 2.4px solid var(--white-blue);
+}
+

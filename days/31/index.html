@@ -52,9 +52,9 @@
               <p class="radio-fq">66,6</p>
             </div>
             <div class="card-extend flex justify-space-between hidden">
-              <p class="minus">-</p>
-              <img class="radio-avatar" src="">
-              <p class="plus">+</p>
+              <img class="minus" src="img/minus.svg">
+              <img class="radio-avatar" src="https://dummyimage.com/400x400/3d43ff/ffffff&text=RadioOne">
+              <img class="plus" src="img/plus.svg">
             </div>
           </div>
           <!-- END: Radio Card -->
@@ -68,9 +68,9 @@
               <p class="radio-fq">101,2</p>
             </div>
             <div class="card-extend flex justify-space-between hidden">
-              <p class="minus">-</p>
-              <img class="radio-avatar" src="">
-              <p class="plus">+</p>
+              <img class="minus" src="img/minus.svg">
+              <img class="radio-avatar" src="https://dummyimage.com/400x400/3d43ff/ffffff&text=RadioOne">
+              <img class="plus" src="img/plus.svg">
             </div>
           </div>
           <!-- END: Radio Card -->
@@ -84,9 +84,9 @@
               <p class="radio-fq">99,4</p>
             </div>
             <div class="card-extend flex justify-space-between hidden">
-              <p class="minus">-</p>
-              <img class="radio-avatar" src="">
-              <p class="plus">+</p>
+              <img class="minus" src="img/minus.svg">
+              <img class="radio-avatar" src="https://dummyimage.com/400x400/3d43ff/ffffff&text=RadioOne">
+              <img class="plus" src="img/plus.svg">
             </div>
           </div>
           <!-- END: Radio Card -->
@@ -100,9 +100,9 @@
               <p class="radio-fq">87,1</p>
             </div>
             <div class="card-extend flex justify-space-between hidden">
-              <p class="minus">-</p>
-              <img class="radio-avatar" src="">
-              <p class="plus">+</p>
+              <img class="minus" src="img/minus.svg">
+              <img class="radio-avatar" src="https://dummyimage.com/400x400/3d43ff/ffffff&text=RadioOne">
+              <img class="plus" src="img/plus.svg">
             </div>
           </div>
           <!-- END: Radio Card -->
@@ -116,9 +116,9 @@
               <p class="radio-fq">142,2</p>
             </div>
             <div class="card-extend flex justify-space-between hidden">
-              <p class="minus">-</p>
-              <img class="radio-avatar" src="">
-              <p class="plus">+</p>
+              <img class="minus" src="img/minus.svg">
+              <img class="radio-avatar" src="https://dummyimage.com/400x400/3d43ff/ffffff&text=RadioOne">
+              <img class="plus" src="img/plus.svg">
             </div>
           </div>
           <!-- END: Radio Card -->
@@ -132,9 +132,9 @@
               <p class="radio-fq">66,6</p>
             </div>
             <div class="card-extend flex justify-space-between hidden">
-              <p class="minus">-</p>
-              <img class="radio-avatar" src="">
-              <p class="plus">+</p>
+              <img class="minus" src="img/minus.svg">
+              <img class="radio-avatar" src="https://dummyimage.com/400x400/3d43ff/ffffff&text=RadioOne">
+              <img class="plus" src="img/plus.svg">
             </div>
           </div>
           <!-- END: Radio Card -->
@@ -242,5 +242,17 @@
     radioPlayer.classList.toggle("closed");
     currentlyPlayingLabel.classList.toggle("transparent");
     selectedRadio.classList.toggle("transparent");
+  });
+
+
+  const cards = document.querySelectorAll(".radio-card");
+  console.log(cards);
+
+  cards.forEach((card) => {
+    card.children[0].addEventListener("click", (e) => {
+      console.log(card);
+      console.log(card.children[1]);
+      card.children[1].classList.toggle("hidden");
+    })
   });
 </script>
