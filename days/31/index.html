@@ -246,12 +246,11 @@
 
 
   const cards = document.querySelectorAll(".radio-card");
-  console.log(cards);
+  // console.log(cards);
 
   cards.forEach((card) => {
     card.children[0].addEventListener("click", (e) => {
       console.log(card);
-      console.log(card.children[1]);
       card.children[1].classList.toggle("hidden");
     })
   });
