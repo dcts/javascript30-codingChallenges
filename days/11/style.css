@@ -1,3 +1,7 @@
+body {
+  background-color: rgb(25,25,25);
+  color: rgb(240,240,240);
+}
 .iphone-container {
   position: relative;
   width: 371px;
