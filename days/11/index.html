@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Javascript30 challenge 11 - design a custom video player (solution by DCTS)">
+  <title>Custom HTML5 Videoplayer</title>
+
+  <!-- LINK STYLESHEETS -->
+  <link rel="stylesheet" href="../../assets-shared/css/fonts.css">
+  <link rel="stylesheet" href="../../assets-shared/css/buttons.css">
+  <link rel="stylesheet" href="../../assets-shared/css/basics.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="center ">Custom HTML5 Videoplayer</h1>
+
+    <div class="iphone-container">
+      <img class="play-svg" src="resources/play.svg">
+      <img class="thumbnail" src="resources/thumbnail.png">
+      <a id="jumptoend" href="jumptoend"></a>
+      <img class="iphone" src="resources/iphone.png" alt="">
+      <video class="player" src="resources/sample-portrait-video.mov" webkit-playsinline playsinline>
+        Your browser does not support HTML5 video.
+      </video>
+    </div>
+
+    <!-- BACK BUTTON -->
+    <div class="flex justify-center">
+      <a id="bttn-back" class="center block bttn bttn-round">BACK<a>
+    </div>
+  </div>
+
+  <!-- LOAD JAVASCRIPS AFTER PAGELOAD -->
+  <script src="../../assets-shared/js/buttons.js"></script>
+  <script src="videoplayer.js"></script>
+</body>
+</html>
+
