@@ -1,4 +1,4 @@
-<a href="https://dcts.github.io/javascript30-codingChallenges/"><img src="https://user-images.githubusercontent.com/44790691/59509724-1fc77900-8eb2-11e9-89d0-f8e729b345fc.png"></a>
+<a href="https://dcts.github.io/javascript30-codingChallenges/" target="_blank"><img src="https://user-images.githubusercontent.com/44790691/59509724-1fc77900-8eb2-11e9-89d0-f8e729b345fc.png"></a>
   
 
 # Javacript 30-day Challenge
