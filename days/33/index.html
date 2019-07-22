@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Javascript30 challenge 33 - Async Await!">
+  <meta title="async await">
+
+  <!-- LINK STYLESHEETS -->
+  <link rel="stylesheet" href="../../assets-shared/css/fonts.css">
+  <link rel="stylesheet" href="../../assets-shared/css/buttons.css">
+  <link rel="stylesheet" href="../../assets-shared/css/basics.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="center ">ASYNC / AWAIT</h1>
+    <p class="center">playing around with asynchronos programming!</p>
+
+    <!-- START BUTTON -->
+    <div class="flex justify-center">
+      <a id="bttn-start" class="center block bttn bttn-round">START<a>
+    </div>
+
+    <!-- TASKS -->
+    <div class="tasks-container">
+      <div class="task">
+        <h1>Task 1</h1>
+        <div class="subtasks-container">
+          <div class="subtask"></div>
+          <div class="subtask"></div>
+          <div class="subtask"></div>
+        </div>
+      </div>
+      <div class="task">
+        <h1>Task 2</h1>
+        <div class="subtasks-container">
+          <div class="subtask"></div>
+          <div class="subtask"></div>
+          <div class="subtask"></div>
+          <div class="subtask"></div>
+          <div class="subtask"></div>
+        </div>
+      </div>
+      <div class="task">
+        <h1>Task 3</h1>
+        <div class="subtasks-container">
+          <div class="subtask"></div>
+          <div class="subtask"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESULTS -->
+    <div class="results center">
+      <!-- will be dynamically filled with JACVASCRIPT -->
+    </div>
+
+    <!-- BACK BUTTON -->
+    <div class="flex justify-center">
+      <a id="bttn-back" class="center block bttn bttn-round">BACK<a>
+    </div>
+  </div>
+
+  <!-- LOAD JAVASCRIPS AFTER PAGELOAD -->
+  <script src="../../assets-shared/js/buttons.js"></script>
+</body>
+</html>
+
+<!-- INLINE STYLE -->
+<style>
+  .tasks-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .task {
+    background-color: rgb(230,230,230);
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
+    border: 5px solid transparent;
+    transition: all 1s ease;
+  }
+  .task > h1 {
+    font-size: 28px;
+    margin: 0;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .subtasks-container {
+    display: flex;
+  }
+  .subtask {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    background-color: red;
+    border-radius: 5px;
+    transition: all 1s ease;
+  }
+  .subtask-done {
+    background-color: green;
+  }
+  .task-done {
+    border: 5px solid green;
+  }
+  .results {
+    /*border: 10px solid red;*/
+    margin: 0 auto;
+    width: 500px;
+    margin-bottom: 40px;
+    height: 130px;
+  }
+  .results > p {
+    transition: all 1s ease;
+    font-weight: bold;
+  }
+  .invisible {
+    opacity: 0;
+    transition: all 1s ease;
+  }
+</style>
+
+<!-- INLINE SCRIPT -->
+<script>
+
+  // GET DOM ELEMENTS
+  const subtasks = document.querySelectorAll('.subtask');
+  const tasks = document.querySelectorAll('.task');
+  const results = document.querySelector('.results');
+
+  // ONCLICK START BUTTON
+  const bttnStart = document.getElementById('bttn-start');
+  bttnStart.addEventListener('click', () => {
+    reset();
+    startTask(5, 1, [1,2,3]);
+    startTask(4, 2, [4,5,6,7,8]);
+    startTask(6, 3, [9,10]);
+  });
+
+  // creates subtasks
+  const startTask = async (seconds, taskNbr, indices) => {
+    indices.forEach(index => {
+      // await sleepTest(3000)
+      await startSubtask(seconds, index)
+      subtasks[index-1].classList.add('subtask-done');
+    });
+    // when all subtasks are finished!
+    // Promise.all(promises)
+    //   .then(() => {
+    //     tasks[taskNbr-1].classList.add('task-done');
+    //     addResult(`Task #${taskNbr} done!`);
+    //   });
+  };
+
+  // returns a promise which can be resolved with ".then()"
+  const startSubtask = (timeIntervall, subtaskIndex) => {
+    return new Promise((resolve, reject) => {
+      if (timeIntervall > 10) {
+        reject(new Error('exceeded maximum sleeptime of 10!'));
+      } else if (timeIntervall === undefined) {
+        reject(new Error('timeintervall hast to be defined!!'));
+      } else {
+        const sleep = Math.random() * timeIntervall * 1000;
+        setTimeout(resolve, sleep);
+      }
+    });
+  };
+
+  // reset all visuals
+  const reset = () => {
+    subtasks.forEach(subtask => {
+      subtask.classList.remove('subtask-done');
+    });
+    tasks.forEach(task => {
+      task.classList.remove('task-done');
+    });
+    results.innerHTML = "";
+  };
+
+  // add result to results
+  const addResult = str => {
+    const insertedHtml = `<p>${str}</p>`
+    results.insertAdjacentHTML("beforeend", insertedHtml);
+  }
+</script>
