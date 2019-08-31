@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- TODO HERE -->
+  <meta name="description" content="Javascript30 challenge ? - ?">
+  <!-- TODO HERE -->
+  <title>Geo Location</title>
+
+  <!-- LINK STYLESHEETS -->
+  <link rel="stylesheet" href="../../assets-shared/css/fonts.css">
+  <link rel="stylesheet" href="../../assets-shared/css/buttons.css">
+  <link rel="stylesheet" href="../../assets-shared/css/basics.css">
+</head>
+
+<body>
+  <div class="container">
+    <!-- TODO HERE -->
+    <h1 class="center ">Get Geolocation From Browser</h1>
+
+    <!-- GET GEOLOCATION -->
+    <div class="flex justify-center">
+      <a id="bttn-get-geolocation" class="center block bttn bttn-round">GET GEOLOCATION<a>
+    </div>
+
+    <br><br>
+    <div class="results-geolocation">
+      <!-- WILL BE FILLED WITH TXT -->
+    </div>
+    <br><br>
+
+    <!-- BACK BUTTON -->
+    <div class="flex justify-center">
+      <a id="bttn-back" class="center block bttn bttn-round">BACK<a>
+    </div>
+  </div>
+
+  <!-- LOAD JAVASCRIPS AFTER PAGELOAD -->
+  <script src="../../assets-shared/js/buttons.js"></script>
+</body>
+</html>
+
+<!-- INLINE STYLE -->
+<style>
+
+</style>
+
+<!-- INLINE SCRIPT -->
+<script>
+  const geoPosition = () => {
+    console.log("HI");
+    navigator.geolocation.getCurrentPosition((data) => {
+      loc = {
+        lat: data.coords.latitude,
+        lng: data.coords.longitude
+      };
+      const message = `
+        <p>latitude :${loc.lat} , longitude : ${loc.lng}</p>
+      `;
+      results.insertAdjacentHTML('afterbegin', message);
+    });
+  };
+
+  const btnStart = document.getElementById("bttn-get-geolocation");
+  const results = document.querySelector(".results-geolocation");
+  console.log(results);
+  let loc = {};
+  btnStart.addEventListener("click", () => {
+    geoPosition();
+  });
+</script>
