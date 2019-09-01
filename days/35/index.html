@@ -69,6 +69,7 @@
         lat: data.coords.latitude,
         lng: data.coords.longitude
       };
+      alert(`${loc.lat} ${loc.lng}`);
       // create ,ng lat bound
       map = new google.maps.Map(document.getElementById('map'), {
         disableDefaultUI: true,
