@@ -18,7 +18,7 @@ allSnippets.forEach(snippet => {
 function injectSnippet(filePath, domId) {
   // distinguis production and localhost environment
   const rootDev = "http://localhost:8000";
-  const rootProd = "https://github.com/dcts/javascript30-codingChallenges";
+  const rootProd = "https://dcts.github.io/javascript30-codingChallenges";
   const root = location.href.includes("localhost") ? rootDev : rootProd;
 
   fetch(`${root}/days/04/highlightJS/codeSnippets/${filePath}`)
