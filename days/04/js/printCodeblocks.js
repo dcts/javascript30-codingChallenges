@@ -1,7 +1,3 @@
-// key takeaway messages tryout
-
-const htmlToPrint = `<h1>Hello World</h1>
-<p>print code and ghightlight without rendering the HTML element</p>`;
 
 function escapeHTML(htmlStr) {
   return htmlStr.split("<").join("&lt;").split(">").join("&gt;");
@@ -9,12 +5,10 @@ function escapeHTML(htmlStr) {
 
 // all code snippets
 const allSnippets = [
-  { filepath: "helloWorld.html", domId: "snippet1"},
-  { filepath: "loadFilecontentAsString.js", domId: "snippet2"},
-  // {filepath: "", domId: "snippet2"},
-  // {filepath: "", domId: "snippet4"},
-  // {filepath: "", domId: "snippet5"},
-  // {filepath: "", domId: "snippet6"},
+  { filepath: "console-table.js", domId: "snippet1"},
+  { filepath: "array-magic-tricks.js", domId: "snippet2"},
+  { filepath: "load-filecontent-as-string.js", domId: "snippet3"},
+  { filepath: "scrape-from-client-only.js", domId: "snippet4"},
 ]
 
 allSnippets.forEach(snippet => {
@@ -30,8 +24,6 @@ function injectSnippet(filePath, domId) {
   fetch(`${root}/days/04/highlightJS/codeSnippets/${filePath}`)
     .then(response => response.text())
     .then(text => {
-      console.log("text");
-      console.log(text);
       // escape if HTML
       if (/.html$/.test(filePath)) {
         text = escapeHTML(text);
