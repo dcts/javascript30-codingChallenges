@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- TODO HERE -->
+  <meta name="description" content="Javascript30 challenge 5 - Flex Panels Image Gallery">
+  <!-- TODO HERE -->
+  <title>Flex Panels Image Gallery</title>
+
+  <!-- LINK STYLESHEETS -->
+  <link rel="stylesheet" href="../../assets-shared/css/fonts.css">
+  <link rel="stylesheet" href="../../assets-shared/css/buttons.css">
+  <link rel="stylesheet" href="../../assets-shared/css/basics.css">
+</head>
+
+<body>
+  <div class="container">
+    <!-- TODO HERE -->
+    <h1 class="center ">Flex Panels Image Gallery</h1>
+
+    <!-- BACK BUTTON -->
+    <div class="flex justify-center">
+      <a id="bttn-back" class="center block bttn bttn-round">BACK</a>
+    </div>
+
+    <!-- content-->
+    <div class="panels-container">
+
+      <!-- <div class="panel panel1">
+        <div><p>Hey</p></div>
+        <div><p>Let's</p></div>
+        <div><p>Dance</p></div>
+      </div>
+      <div class="panel panel2">
+        <div><p>Give</p></div>
+        <div><p>Take</p></div>
+        <div><p>Receive</p></div>
+      </div>
+      <div class="panel panel3">
+        <div><p>Experience</p></div>
+        <div><p>It</p></div>
+        <div><p>Today</p></div>
+      </div>
+      <div class="panel panel4">
+        <div><p>Give</p></div>
+        <div><p>All</p></div>
+        <div><p>You Can</p></div>
+      </div>
+      <div class="panel panel5">
+        <div><p>Live</p></div>
+        <div><p>In</p></div>
+        <div><p>Motion</p></div>
+      </div> -->
+      <div class="panel panel1">
+        <p>Hey</p>
+        <p>Let's</p>
+        <p>Dance</p>
+      </div>
+      <div class="panel panel2">
+        <p>Give</p>
+        <p>Take</p>
+        <p>Receive</p>
+      </div>
+      <div class="panel panel3">
+        <p>Experience</p>
+        <p>It</p>
+        <p>Today</p>
+      </div>
+      <div class="panel panel4">
+        <p>Give</p>
+        <p>All</p>
+        <p>You Can</p>
+      </div>
+      <div class="panel panel5">
+        <p>Live</p>
+        <p>In</p>
+        <p>Motion</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOAD JAVASCRIPS AFTER PAGELOAD -->
+  <script src="../../assets-shared/js/buttons.js"></script>
+</body>
+</html>
+
+<!-- INLINE STYLE -->
+<style>
+  .panels-container {
+    width: 100%;
+    border: 1px solid red;
+    height: 60vh;
+    margin-top: 40px;
+    display: flex;
+  }
+  .panels-container p {
+    margin: 0;
+  }
+  .panels-container > .panel {
+    border: 1px solid green;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .panels-container > .panel > div {
+    border: 1px solid blue;
+    flex-grow: 1;
+    display: flex;
+  }
+  .panels-container > .panel > div > p {
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+  }
+
+</style>
+
+<!-- INLINE SCRIPT -->
+<script>
+
+</script>
