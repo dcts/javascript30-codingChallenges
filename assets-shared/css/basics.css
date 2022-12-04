@@ -16,6 +16,10 @@ a:hover {
   max-width: 800px;
   margin: 0 auto;
 }
+.container-wide {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 .center {
   text-align: center;
 }

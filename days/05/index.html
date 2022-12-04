@@ -24,39 +24,13 @@
     </div>
 
     <!-- content-->
-    <div class="panels-container">
-
-      <!-- <div class="panel panel1">
-        <div><p>Hey</p></div>
-        <div><p>Let's</p></div>
-        <div><p>Dance</p></div>
-      </div>
-      <div class="panel panel2">
-        <div><p>Give</p></div>
-        <div><p>Take</p></div>
-        <div><p>Receive</p></div>
-      </div>
-      <div class="panel panel3">
-        <div><p>Experience</p></div>
-        <div><p>It</p></div>
-        <div><p>Today</p></div>
-      </div>
-      <div class="panel panel4">
-        <div><p>Give</p></div>
-        <div><p>All</p></div>
-        <div><p>You Can</p></div>
-      </div>
-      <div class="panel panel5">
-        <div><p>Live</p></div>
-        <div><p>In</p></div>
-        <div><p>Motion</p></div>
-      </div> -->
+    <div class="panels">
       <div class="panel panel1">
         <p>Hey</p>
         <p>Let's</p>
         <p>Dance</p>
       </div>
-      <div class="panel panel2">
+      <div class="panel panel2 active">
         <p>Give</p>
         <p>Take</p>
         <p>Receive</p>
@@ -85,37 +59,67 @@
 </html>
 
 <!-- INLINE STYLE -->
+<!-- images
+  https://images.unsplash.com/photo-1536431311719-398b6704d4cc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60
+https://images.unsplash.com/photo-1540206395-68808572332f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60
+https://images.unsplash.com/photo-1550236520-7050f3582da0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60
+https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60
+https://images.unsplash.com/photo-1455218873509-8097305ee378?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60
+-->
 <style>
-  .panels-container {
+  .panels {
     width: 100%;
-    border: 1px solid red;
     height: 60vh;
     margin-top: 40px;
     display: flex;
+    overflow: hidden;
   }
-  .panels-container p {
-    margin: 0;
-  }
-  .panels-container > .panel {
-    border: 1px solid green;
-    flex-grow: 1;
+  .panel {
+    flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    background-repeat: no-repeat;
+    background-size: cover !important;
+    transition: flex 0.7s;
   }
-  .panels-container > .panel > div {
-    border: 1px solid blue;
-    flex-grow: 1;
-    display: flex;
+  .panel p {
+    margin: 0;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: transform 0.5s;
+    transition-delay: 0.7s;
   }
-  .panels-container > .panel > div > p {
-    flex-grow: 1;
-    justify-content: center;
-    align-items: center;
-  }
+
+  .panel.panel1 { background: linear-gradient(0deg, rgba(46, 46, 46, 0.7), rgba(46, 46, 46, 0.7)), url("https://images.unsplash.com/photo-1536431311719-398b6704d4cc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60") }
+  .panel.panel2 { background: linear-gradient(0deg, rgba(46, 46, 46, 0.7), rgba(46, 46, 46, 0.7)), url("https://images.unsplash.com/photo-1540206395-68808572332f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60") }
+  .panel.panel3 { background: linear-gradient(0deg, rgba(46, 46, 46, 0.7), rgba(46, 46, 46, 0.7)), url("https://images.unsplash.com/photo-1550236520-7050f3582da0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60") }
+  .panel.panel4 { background: linear-gradient(0deg, rgba(46, 46, 46, 0.7), rgba(46, 46, 46, 0.7)), url("https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60") }
+  .panel.panel5 { background: linear-gradient(0deg, rgba(46, 46, 46, 0.7), rgba(46, 46, 46, 0.7)), url("https://images.unsplash.com/photo-1455218873509-8097305ee378?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60") }
+  
+  .panel > p:first-child { transform: translateY(-50px)}
+  .panel > p:last-child { transform: translateY(50px)}
+
+  .panel.active > p:first-child { transform: translateY(0)}
+  .panel.active > p:last-child { transform: translateY(0)}
+  .panel.active { flex: 5 }
+  .panel.active.panel1 { background: linear-gradient(0deg, rgba(46, 46, 46, 0.3), rgba(46, 46, 46, 0.3)), url("https://images.unsplash.com/photo-1536431311719-398b6704d4cc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60") }
+  .panel.active.panel2 { background: linear-gradient(0deg, rgba(46, 46, 46, 0.3), rgba(46, 46, 46, 0.3)), url("https://images.unsplash.com/photo-1540206395-68808572332f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60") }
+  .panel.active.panel3 { background: linear-gradient(0deg, rgba(46, 46, 46, 0.3), rgba(46, 46, 46, 0.3)), url("https://images.unsplash.com/photo-1550236520-7050f3582da0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60") }
+  .panel.active.panel4 { background: linear-gradient(0deg, rgba(46, 46, 46, 0.3), rgba(46, 46, 46, 0.3)), url("https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60") }
+  .panel.active.panel5 { background: linear-gradient(0deg, rgba(46, 46, 46, 0.3), rgba(46, 46, 46, 0.3)), url("https://images.unsplash.com/photo-1455218873509-8097305ee378?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60") }
+
+  /* Transition Animations */
 
 </style>
 
 <!-- INLINE SCRIPT -->
 <script>
-
+  const panels = document.querySelectorAll(".panel");
+  panels.forEach(panel => panel.addEventListener("click", () => {
+    panels.forEach(panel => panel.classList.remove("active"));
+    panel.classList.toggle("active");
+  }));
 </script>
